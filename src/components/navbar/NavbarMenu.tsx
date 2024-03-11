@@ -16,14 +16,14 @@ import {
 
 export function NavbarMenu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden sm:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="bg-transparent">
             Projects
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-3 w-[380px] grid-cols-[.7fr_1fr]">
+            <ul className="grid gap-3 p-3 w-[350px] md:w-[380px] grid-cols-[.7fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
@@ -56,7 +56,7 @@ export function NavbarMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent mx-5">
+          <NavigationMenuTrigger className="bg-transparent mx-3 md:mx-5">
             Interact
           </NavigationMenuTrigger>
           <NavigationMenuContent>
