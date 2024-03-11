@@ -4,7 +4,7 @@ import { NavbarMenu } from './NavbarMenu';
 
 export default function Navbar() {
   return (
-    <nav className="w-full sticky top-0 bg-background/60 border-b">
+    <nav className="w-full sticky top-0 bg-background/60 border-b z-50">
       <div className="absolute -z-40 w-full h-full bg-transparent backdrop-blur" />
       <div className="flex mx-auto max-w-screen-2xl items-center justify-between px-16 py-4">
         <Link href="/">

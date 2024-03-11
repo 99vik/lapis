@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background antialiased',
+          'min-h-screen bg-background antialiased bg-grid-small-white/[0.2]',
           inter.className
         )}
       >
