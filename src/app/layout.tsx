@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/navbar';
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({ subsets: ['latin'], weight: ['500'] });
 
 export const metadata: Metadata = {
   title: 'LAPIS-dev',
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={cn(
           'min-h-screen bg-background antialiased bg-grid-small-white/[0.2]',
-          inter.className
+          roboto.className
         )}
       >
         <Navbar />

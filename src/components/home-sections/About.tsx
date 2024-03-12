@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <div className="grid mb-10 lg:grid-cols-2 md:flex-row gap-10 items-center px-4 sm:px-6 md:w-[80%] max-w-screen-2xl mx-auto">
+    <div className="grid mb-32 lg:grid-cols-2 md:flex-row gap-10 items-center px-4 sm:px-6 md:w-[80%] max-w-screen-2xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold mb-2">About us</h2>
         <p className="mb-5 text-zinc-300">
@@ -26,16 +26,5 @@ export default function About() {
         />
       </div>
     </div>
-    // <div className="flex flex-col justify-center mb-10 items-center px-4 sm:px-6 md:w-[80%] max-w-screen-2xl mx-auto">
-    //   <h2 className="text-4xl font-bold mb-2">Who are we?</h2>
-    //   <p className="mb-5 text-zinc-300 w-[500px]">
-    //     Maecenas ac leo ante. Maecenas a ligula leo. Aliquam eget venenatis
-    //     risus. Donec eget ultrices augue. Ut sodales tortor sem, id suscipit
-    //     massa tristique ut.
-    //   </p>
-    //   <Link className={buttonVariants()} href="/about">
-    //     Learn more
-    //   </Link>
-    // </div>
   );
 }
