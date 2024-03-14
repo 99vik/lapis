@@ -36,6 +36,18 @@
   }
 }
 
+@layer components {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    background-color: rgb(0, 0, 0, 0);
+  }
+   
+  .scrollbar-primary::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+  }
+}
+
 .no-visible-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -44,4 +56,13 @@
 
 .no-visible-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
+body::-webkit-scrollbar-track-piece
+{
+   display:none;
 }

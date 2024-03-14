@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background antialiased bg-grid-small-white/[0.2]',
+          'min-h-screen bg-background antialiased scrollbar-thin scrollbar-primary bg-grid-small-white/[0.2]',
           roboto.className
         )}
       >
