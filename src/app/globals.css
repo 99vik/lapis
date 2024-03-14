@@ -38,7 +38,7 @@
 
 @layer components {
   .scrollbar-thin::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
     background-color: rgb(0, 0, 0, 0);
   }
    

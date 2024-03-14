@@ -37,10 +37,17 @@ export const Tabs = ({
   const [hovering, setHovering] = useState(false);
 
   return (
-    <>
+    <div className="flex flex-col md:flex-row gap-6 w-full">
+      <FadeInDiv
+        tabs={tabs}
+        active={active}
+        key={active.value}
+        hovering={hovering}
+        className={cn('mt-0', contentClassName)}
+      />
       <div
         className={cn(
-          'flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full',
+          'flex flex-col h-[350px] border-l pl-2 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
           containerClassName
         )}
       >
@@ -62,26 +69,17 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: 'spring', bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  'absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full ',
+                  'absolute inset-0 bg-zinc-700 rounded-full',
                   activeTabClassName
                 )}
               />
             )}
 
-            <span className="relative block text-black dark:text-white">
-              {tab.title}
-            </span>
+            <span className="relative block text-white ">{tab.title}</span>
           </button>
         ))}
       </div>
-      <FadeInDiv
-        tabs={tabs}
-        active={active}
-        key={active.value}
-        hovering={hovering}
-        className={cn('mt-32', contentClassName)}
-      />
-    </>
+    </div>
   );
 };
 
@@ -107,12 +105,12 @@ export const FadeInDiv = ({
           layoutId={tab.value}
           style={{
             scale: 1 - idx * 0.1,
-            top: hovering ? idx * -50 : 0,
+            top: hovering ? idx * -28 : 0,
             zIndex: -idx,
-            opacity: idx < 3 ? 1 - idx * 0.1 : 0,
+            opacity: idx < 4 ? 1 - idx * 0.2 : 0,
           }}
           animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
+            y: isActive(tab) ? [0, 0, 0] : 0,
           }}
           className={cn('w-full h-full absolute top-0 left-0', className)}
         >
