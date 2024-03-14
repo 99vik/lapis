@@ -1,6 +1,6 @@
 import About from '@/components/home-sections/About';
 import Hero from '@/components/home-sections/Hero';
-import { PleaInteract } from '@/components/home-sections/PleaInteract';
+import { AmicornProject } from '@/components/home-sections/AmicornProject';
 import Projects from '@/components/home-sections/Projects';
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
-      <PleaInteract />
+      <AmicornProject />
     </main>
   );
 }

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <div className="grid mb-32 lg:grid-cols-2 md:flex-row gap-10 items-center px-4 sm:px-6 md:w-[80%] max-w-screen-2xl mx-auto">
+    <div className="grid mb-32 lg:grid-cols-2 gap-10 items-center px-4 sm:px-6 md:w-[80%] max-w-screen-2xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold mb-2">About us</h2>
         <p className="mb-5 text-zinc-300">

@@ -1,7 +1,9 @@
+import { SparklesTitle } from '@/components/ui/sparkles-title';
+
 export default function Page() {
   return (
-    <main>
-      <p className="">projects</p>
+    <main className="min-h-screen">
+      <SparklesTitle title="Projects" />
     </main>
   );
 }
