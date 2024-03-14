@@ -27,18 +27,11 @@ export default function Projects() {
     },
   ];
   return (
-    <div className="flex shadow-[0_0px_30px_20px_rgba(24,24,27,0.6)] flex-col overflow-hidden rounded-3xl bg-zinc-900/60 border mb-10 gap-6 items-center py-10 px-4 sm:px-6 md:w-[80%] max-w-screen-xl mx-3 md:mx-auto">
-      <h2 className="text-3xl font-bold mb-2">Our projects</h2>
-      <InfiniteMovingCards items={items} speed="slow" />
-      <Link
-        href="/projects"
-        className={buttonVariants({
-          className: 'text-xl text-zinc-900',
-          size: 'lg',
-        })}
-      >
-        Projects
+    <div className="flex shadow-[0_0px_30px_20px_rgba(24,24,27,0.6)] flex-col overflow-hidden rounded-3xl bg-zinc-900/60 border mb-10 gap-4 items-center py-8 px-4 sm:px-6 md:w-[80%] max-w-screen-xl mx-3 md:mx-auto">
+      <Link href="/projects" className="hover:underline">
+        <h2 className="text-2xl font-bold mb-2">Our projects</h2>
       </Link>
+      <InfiniteMovingCards items={items} speed="slow" />
     </div>
   );
 }
