@@ -3,7 +3,7 @@ import { SparklesTitle } from '@/components/SparklesTitle';
 
 export default function Page() {
   return (
-    <main className="">
+    <main className="overflow-x-hidden">
       <SparklesTitle title="Projects" />
       <ProjectsTabs />
     </main>

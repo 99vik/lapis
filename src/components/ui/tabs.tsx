@@ -37,17 +37,17 @@ export const Tabs = ({
   const [hovering, setHovering] = useState(false);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 w-full">
+    <div className="flex -mt-4 flex-col lg:flex-row gap-6 w-full">
       <FadeInDiv
         tabs={tabs}
         active={active}
         key={active.value}
         hovering={hovering}
-        className={cn('mt-0', contentClassName)}
+        className={cn('mt-[120px] sm:mt-[270px] lg:mt-0', contentClassName)}
       />
       <div
         className={cn(
-          'flex flex-col h-[326px] border-l border-zinc-700 pl-3 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
+          'flex bg-zinc-800 sm:bg-zinc-800/0 sm:flex-col mb-[700px] sm:mb-[400px] lg:mb-8 lg:h-[326px] border-b lg:border-b-0 lg:border-l border-zinc-700 lg:pl-3 items-center lg:items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full lg:w-fit',
           containerClassName
         )}
       >
@@ -112,7 +112,10 @@ export const FadeInDiv = ({
           animate={{
             y: isActive(tab) ? [0, 0, 0] : 0,
           }}
-          className={cn('w-full h-full absolute top-0 left-0', className)}
+          className={cn(
+            'w-full max-w-[92vw] left-[4%] md:max-w-[80vw] md:left-[10%] h-full absolute top-0 lg:left-0',
+            className
+          )}
         >
           {tab.content}
         </motion.div>

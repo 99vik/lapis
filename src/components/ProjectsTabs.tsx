@@ -14,10 +14,10 @@ function TabDiv({
   url: string;
 }) {
   return (
-    <div className="w-full overflow-hidden border border-zinc-400 relative h-fit rounded-2xl p-4 text-3xl font-bold text-black bg-gradient-to-br from-zinc-200 via-white to-zinc-300">
+    <div className="w-full overflow-hidden border border-zinc-400 relative h-[650px] sm:h-fit rounded-2xl p-4 text-3xl font-bold text-black bg-gradient-to-br from-zinc-200 via-white to-zinc-300">
       <p className="mb-3 pb-1 border-b border-zinc-300">{title}</p>
-      <div className="flex gap-4">
-        <div className="h-[240px] aspect-square bg-zinc-600 rounded-xl flex items-center justify-center">
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+        <div className="h-[240px] w-fit self-center aspect-square bg-zinc-600 rounded-xl flex items-center justify-center">
           <p className="text-xs text-white font-normal">image placeholder</p>
         </div>
         <p className="text-base font-normal text-zinc-700">
@@ -41,7 +41,7 @@ export function ProjectsTabs() {
   });
 
   return (
-    <div className="h-fit [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start mt-6 mb-16">
+    <div className="h-fit [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start lg:mt-6 mb-16">
       <Tabs tabs={content} />
     </div>
   );
