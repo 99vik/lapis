@@ -39,10 +39,13 @@ export function NavbarMenu() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/projects" title="AMICORC">
+              <ListItem href="/projects/amicorn" title="AMICORC">
                 Real time online emotion recognition robot.
               </ListItem>
-              <ListItem href="" title="Cartesian robot">
+              <ListItem
+                href="/projects/cartesian-coordinate-robot"
+                title="Cartesian robot"
+              >
                 Cartesian coordinate robot project.
               </ListItem>
               <ListItem

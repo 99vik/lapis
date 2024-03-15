@@ -5,8 +5,8 @@ import { SparklesCore } from './ui/sparkles';
 
 export function SparklesTitle({ title }: { title: string }) {
   return (
-    <div className="h-fit mt-4 flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="text-5xl font-bold text-center text-white relative z-20">
+    <div className="h-fit min-h-[161px] mt-4 flex flex-col items-center justify-start overflow-hidden rounded-md">
+      <h1 className="text-4xl font-bold text-center text-white relative z-20">
         {title}
       </h1>
       <div className="w-full h-fit relative ">
