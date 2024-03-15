@@ -47,7 +47,7 @@ export const Tabs = ({
       />
       <div
         className={cn(
-          'flex flex-col h-[350px] border-l pl-3 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
+          'flex flex-col h-[326px] border-l border-zinc-700 pl-3 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
           containerClassName
         )}
       >
@@ -105,7 +105,7 @@ export const FadeInDiv = ({
           layoutId={tab.value}
           style={{
             scale: 1 - idx * 0.1,
-            top: hovering ? idx * -28 : 0,
+            top: hovering ? idx * -12 : 0,
             zIndex: -idx,
             opacity: idx < 4 ? 1 - idx * 0.2 : 0,
           }}

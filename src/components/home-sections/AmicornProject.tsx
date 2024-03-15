@@ -16,7 +16,7 @@ export function AmicornProject() {
         </p>
       </div>
       <div className="order-first lg:order-last">
-        <Link href="/projects" className="hover:underline">
+        <Link href="/projects/amicorn" className="hover:underline">
           <h2 className="text-2xl font-bold mb-2">AMICORN Project</h2>
         </Link>
         <p className="mb-5 text-zinc-300">

@@ -1,14 +1,32 @@
 'use client';
 
-import { ReactNode } from 'react';
+import Link from 'next/link';
 import { Tabs } from './ui/tabs';
 import { projectsTabsContent } from '@/lib/content';
 
-function TabDiv({ title, text }: { title: string; text: string }) {
+function TabDiv({
+  title,
+  text,
+  url,
+}: {
+  title: string;
+  text: string;
+  url: string;
+}) {
   return (
-    <div className="w-full overflow-hidden border border-zinc-400 relative h-[350px] rounded-2xl p-6 text-xl md:text-4xl font-bold text-black bg-gradient-to-br from-white to-zinc-300">
-      <p className="mb-2">{title}</p>
-      <p className="text-xl font-normal text-zinc-700">{text}</p>
+    <div className="w-full overflow-hidden border border-zinc-400 relative h-fit rounded-2xl p-4 text-3xl font-bold text-black bg-gradient-to-br from-zinc-200 via-white to-zinc-300">
+      <p className="mb-3 pb-1 border-b border-zinc-300">{title}</p>
+      <div className="flex gap-4">
+        <div className="h-[240px] aspect-square bg-zinc-600 rounded-xl flex items-center justify-center">
+          <p className="text-xs text-white font-normal">image placeholder</p>
+        </div>
+        <p className="text-base font-normal text-zinc-700">
+          {text}{' '}
+          <Link href={url} className="font-semibold underline text-zinc-800">
+            Learn more.
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }
@@ -18,12 +36,12 @@ export function ProjectsTabs() {
     return {
       title: tab.title,
       value: tab.title,
-      content: <TabDiv title={tab.title} text={tab.text} />,
+      content: <TabDiv title={tab.title} text={tab.text} url={tab.url} />,
     };
   });
 
   return (
-    <div className="h-[400px] [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start mt-6 mb-40">
+    <div className="h-fit [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start mt-6 mb-16">
       <Tabs tabs={content} />
     </div>
   );

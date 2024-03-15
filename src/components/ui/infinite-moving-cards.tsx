@@ -2,7 +2,8 @@
 
 import { cn } from '@/lib/utils';
 import React, { useEffect, useState } from 'react';
-import { Button } from './button';
+import { Button, buttonVariants } from './button';
+import Link from 'next/link';
 
 export const InfiniteMovingCards = ({
   items,
@@ -14,6 +15,7 @@ export const InfiniteMovingCards = ({
   items: {
     body: string;
     title: string;
+    url: string;
   }[];
   direction?: 'left' | 'right';
   speed?: 'fast' | 'normal' | 'slow';
@@ -109,9 +111,15 @@ export const InfiniteMovingCards = ({
                 <span className="relative h-full z-20 text-sm leading-[1.6] text-neutral-600 font-normal">
                   {item.body}
                 </span>
-                <Button className="w-full bg-neutral-900 hover:bg-neutral-700 text-white">
+                <Link
+                  href={item.url}
+                  className={cn(
+                    'w-full',
+                    buttonVariants({ variant: 'secondary' })
+                  )}
+                >
                   View more
-                </Button>
+                </Link>
               </div>
             </div>
           </li>
