@@ -2,7 +2,7 @@ import { SparklesTitle } from '@/components/SparklesTitle';
 
 export default function Page() {
   return (
-    <main className="min-h-screen pt-10">
+    <main className="min-h-screen">
       <SparklesTitle title="About us" />
     </main>
   );

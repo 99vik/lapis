@@ -47,7 +47,7 @@ export const Tabs = ({
       />
       <div
         className={cn(
-          'flex flex-col h-[350px] border-l pl-2 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
+          'flex flex-col h-[350px] border-l pl-3 items-start justify-start whitespace-nowrap [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-fit',
           containerClassName
         )}
       >
