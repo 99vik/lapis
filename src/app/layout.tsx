@@ -7,7 +7,10 @@ import Footer from '@/components/Footer';
 const roboto = Roboto({ subsets: ['latin'], weight: ['500'] });
 
 export const metadata: Metadata = {
-  title: 'LAPIS-dev',
+  title: {
+    template: '%s | LAPIS',
+    default: 'LAPIS',
+  },
   description: 'Laboratory for Manufacturing and Assembly Systems Planning',
 };
 

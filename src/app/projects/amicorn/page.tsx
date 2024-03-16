@@ -1,4 +1,9 @@
 import { SparklesTitle } from '@/components/SparklesTitle';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AMICORN',
+};
 
 export default function Page() {
   return (
