@@ -2,16 +2,16 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="flex flex-col md:flex-row min-h-screen gap-20 md:gap-12 items-center justify-center px-4 sm:px-6 md:w-[75%] mx-auto">
+    <div className="flex flex-col md:flex-row mb-32 sm:mb-0 mt-11 sm:mt-0 sm:min-h-screen gap-20 md:gap-12 items-center justify-center px-4 sm:px-6 md:w-[75%] mx-auto">
       <Image
         src="/logo-big.png"
-        className="h-[200px] max-w-[90vw] w-auto sm:-translate-y-[72px]"
+        className="h-[200px] w-auto sm:-translate-y-[72px]"
         width={638}
         height={391}
         alt="hero image"
       />
       <div className="sm:-translate-y-[72px]">
-        <p className="text-2xl sm:text-4xl mb-6 font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
+        <p className="text-2xl sm:text-4xl mb-6 font-bold z-20 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
           Laboratory for Manufacturing and Assembly Systems Planning
         </p>
         <ul className="list-disc flex flex-col gap-1 list-outside ms-4 text-neutral-400">

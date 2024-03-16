@@ -21,7 +21,7 @@ export function SparklesTitle({ title }: { title: string }) {
           className="w-full"
           particleColor="#34d3eb"
         />
-        <div className="absolute inset-0 w-full bg-grid-small-white/[0.15] sm:bg-grid-small-white/[0.2] bg-background [mask-image:radial-gradient(220px_120px_at_top,transparent_75%,white)]"></div>
+        <div className="absolute inset-0 w-full bg-grid-small-white/[0.125] sm:bg-grid-small-white/[0.2] bg-background [mask-image:radial-gradient(220px_120px_at_top,transparent_75%,white)]"></div>
       </div>
     </div>
   );
