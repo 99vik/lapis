@@ -41,7 +41,7 @@ export function ProjectsTabs() {
   });
 
   return (
-    <div className="h-fit [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start lg:mt-6 mb-16">
+    <div className="h-fit [perspective:1000px] relative flex flex-col max-w-5xl mx-auto w-screen flex-1 items-start justify-start -mt-2 lg:mt-8 mb-16">
       <Tabs tabs={content} />
     </div>
   );

@@ -23,7 +23,7 @@ export function LocationPin() {
               alt="map location"
             />
             <div className="text-base !m-0 !p-0 font-normal">
-              <span className="text-slate-500 ">Open in Google maps.</span>
+              <span className="text-slate-500 ">Open in Google maps</span>
             </div>
           </div>
         </a>
