@@ -1,40 +1,35 @@
 'use client';
 
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { useState } from 'react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MobileMenu() {
-  const [menu, setMenu] = useState(false);
-
   return (
     <>
-      <Sheet>
-        <SheetTrigger className='className="sm:hidden"' asChild>
+      <Sheet open>
+        <SheetTrigger className="sm:hidden" asChild>
           <Button
             variant="ghost"
             className="w-fit h-fit p-2 hover:bg-transparent"
-            onClick={() => setMenu((prev) => !prev)}
           >
             <Menu size={40} strokeWidth={1.5} />
           </Button>
         </SheetTrigger>
         <SheetContent
           side="top"
-          className="flex flex-col h-screen text-2xl pt-10"
+          className="flex flex-col items-center h-screen gap-6 text-3xl pt-12"
         >
+          <div className="flex justify-center items-center gap-2 pb-4 w-full border-b">
+            <Image src="/logo.png" width={32} height={32} alt="Logo" />
+            <p className="font-bold text-2xl">LAPIS</p>
+          </div>
+          <Link href="/">Home</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/about">About us</Link>
-          <div className="flex flex-col text-zinc-500 gap-3 items-start">
+          <div className="flex flex-col text-zinc-500 gap-3 border-t w-full items-center">
             <p className="text-white mt-4">Interact</p>
             <Link href="/about">PLEA</Link>
             <Link href="/about">VR Lab</Link>
