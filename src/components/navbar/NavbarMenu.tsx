@@ -19,7 +19,7 @@ export function NavbarMenu() {
     <NavigationMenu className="hidden sm:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent">
+          <NavigationMenuTrigger className="bg-transparent w-[118px]">
             Projects
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -59,26 +59,43 @@ export function NavbarMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent mx-3 md:mx-5">
-            Interact
+          <NavigationMenuTrigger className="bg-transparent w-[118px]">
+            Curriculum
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[320px] gap-3 p-4 md:grid-cols-1">
-              <ListItem title="PLEA" href="/">
-                Interact with PLEA
+              <ListItem title="MIR" href="/">
+                MIR smjer tekst.
               </ListItem>
-              <ListItem title="Smart Lab" href="/">
-                Smart lab description.
-              </ListItem>
-              <ListItem title="VR Lab" href="/">
-                Enter a 3D model of our lab.
+              <ListItem title="Graduate studies" href="/">
+                Graduate studies text.{' '}
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href="/news" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle({ className: 'w-[90px]' })}
+            >
+              News
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/gallery" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle({ className: 'w-[90px]' })}
+            >
+              Gallery
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <Link href="/about" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle({ className: 'w-[90px]' })}
+            >
               About us
             </NavigationMenuLink>
           </Link>
