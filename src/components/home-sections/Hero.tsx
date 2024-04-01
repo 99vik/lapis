@@ -1,8 +1,11 @@
+'use client';
+
+import { ArrowDown } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="flex flex-col md:flex-row mb-32 sm:mb-0 mt-11 sm:mt-0 sm:min-h-screen gap-20 md:gap-12 items-center justify-center px-4 sm:px-6 md:w-[75%] mx-auto">
+    <div className="flex relative flex-col md:flex-row mb-32 sm:mb-0 mt-11 sm:mt-0 sm:min-h-[calc(100vh-72px)] gap-20 md:gap-12 items-center justify-center px-4 sm:px-6 md:w-[75%] mx-auto">
       <Image
         src="/logo-big.png"
         className="h-[200px] w-auto sm:-translate-y-[72px]"
@@ -21,6 +24,12 @@ export default function Hero() {
           <li> University of Zagreb</li>
         </ul>
       </div>
+      <button
+        onClick={() => window.scrollTo(0, 500)}
+        className="absolute bottom-2 left-[calc(50%-15px)] animate-bounce rounded-full border-2 border-white p-1"
+      >
+        <ArrowDown size={18} />
+      </button>
     </div>
   );
 }
