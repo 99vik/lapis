@@ -19,7 +19,7 @@ export default function TransparencyControl() {
       className={cn(
         'absolute -z-40 w-full h-full transition',
         transparent
-          ? 'backdrop-blur-none bg-background/0'
+          ? 'bg-background/0'
           : 'backdrop-blur bg-background/60 border-b'
       )}
     />

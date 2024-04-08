@@ -3,12 +3,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import img1 from '@/../public/img1.jpg';
-import Image from 'next/image';
 
 export default function NavigationCards() {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const cardImages = [img1.src, img1.src, img1.src];
-  console.log(img1.src);
 
   const cardDescriptions = [
     'This is a description, write whatever you need here, this is just text for a test',
@@ -24,26 +22,20 @@ export default function NavigationCards() {
 
   const cardVariants = {
     expanded: {
-      width: '400px',
+      width: '450px',
     },
     collapsed: {
-      width: '200px',
+      width: '250px',
     },
   };
 
   return (
-    <section className="py-16 pb-[300px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-3xl font-extrabold text-white">
-          Featured Projects
-        </h1>
-        <p className="mt-4 text-xl text-gray-300">Check out our latest works</p>
-      </div>
-      <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-5">
+    <section className="sm:py-10">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-5">
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className={`card cursor-pointer h-[500px] bg-cover bg-center rounded-[20px] ${
+            className={`card h-[500px] bg-cover bg-center rounded-[20px] ${
               index === expandedIndex ? 'expanded' : ''
             }`}
             variants={cardVariants}
