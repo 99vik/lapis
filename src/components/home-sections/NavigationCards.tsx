@@ -3,62 +3,137 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import img1 from '@/../public/img1.jpg';
+import projectsImg from '@/../public/projectExp.jpg';
+import curriculumImg from '@/../public/curriculumExp.jpg';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 export default function NavigationCards() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-  const cardImages = [img1.src, img1.src, img1.src];
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const cardDescriptions = [
-    'This is a description, write whatever you need here, this is just text for a test',
-    'This is a description, write whatever you need here, this is just text for a test',
-    'This is a description, write whatever you need here, this is just text for a test',
-    'This is a description, write whatever you need here, this is just text for a test',
-    'This is a description, write whatever you need here, this is just text for a test',
-  ];
-
-  const handleCardClick = (index) => {
+  function handleCardHover(index: number) {
     setExpandedIndex(index === expandedIndex ? -1 : index);
-  };
+  }
+
+  const cardContent = [
+    {
+      imgSrc: curriculumImg.src,
+      title: 'Curriculum',
+      links: [
+        {
+          name: 'Study of mechatronics and robotics',
+          href: '/',
+        },
+        {
+          name: 'Graduate studies',
+          href: '/',
+        },
+      ],
+    },
+    {
+      imgSrc: projectsImg.src,
+      title: 'Projects',
+      links: [
+        {
+          name: 'Scientific projects',
+          href: '/projects',
+        },
+        {
+          name: 'Student projects',
+          href: '/projects',
+        },
+      ],
+    },
+    {
+      imgSrc: img1.src,
+      title: 'LAPIS',
+      links: [
+        {
+          name: 'News',
+          href: '/news',
+        },
+        {
+          name: 'About',
+          href: '/about',
+        },
+        {
+          name: 'Gallery',
+          href: '/gallery',
+        },
+      ],
+    },
+  ];
 
   const cardVariants = {
     expanded: {
-      width: '450px',
+      width: '520px',
     },
     collapsed: {
-      width: '250px',
+      width: '320px',
+    },
+  };
+
+  const heightVariants = {
+    expanded: {
+      height: '160px',
+    },
+    collapsed: {
+      height: '45px',
     },
   };
 
   return (
     <section className="sm:py-10">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-2">
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
-            className={`card h-[500px] bg-cover bg-center rounded-[20px] ${
-              index === expandedIndex ? 'expanded' : ''
-            }`}
+            className={cn(
+              'card h-[440px] bg-cover bg-center rounded-[20px] border',
+              index === expandedIndex && 'expanded'
+            )}
             variants={cardVariants}
             initial="collapsed"
             animate={index === expandedIndex ? 'expanded' : 'collapsed'}
-            transition={{ duration: 0.5 }}
-            onHoverStart={() => handleCardClick(index)}
-            onHoverEnd={() => handleCardClick(index)}
+            transition={{ duration: 0.4 }}
+            onHoverStart={() => handleCardHover(index)}
+            onHoverEnd={() => setExpandedIndex(-1)}
             style={{
-              backgroundImage: `url(${cardImages[index]})`,
+              backgroundImage: `url(${cardContent[index].imgSrc})`,
             }}
           >
-            <div className="card-content h-full flex flex-col justify-end">
-              <div className="card-footer rounded-b-[20px] bg-gray-800 bg-opacity-75 min-h-[100px] flex flex-col items-center justify-center">
-                <h2 className="text-xl font-semibold text-white text-center">
-                  Card {index + 1}
-                </h2>
-                {index === expandedIndex && (
-                  <p className="mt-2 text-gray-300 text-center">
-                    {cardDescriptions[index]}{' '}
-                  </p>
+            <div className="card-content h-full overflow-hidden flex flex-col justify-end">
+              <motion.div
+                variants={heightVariants}
+                initial="collapsed"
+                animate={index === expandedIndex ? 'expanded' : 'collapsed'}
+                transition={{ duration: 0.4 }}
+                className={cn(
+                  'card-footer rounded-b-[20px] bg-primary/70 flex flex-col items-center justify-start pt-1 pb-4'
                 )}
-              </div>
+              >
+                <h2 className="text-2xl font-semibold text-black">
+                  {cardContent[index].title}
+                </h2>
+                <ul
+                  className={cn(
+                    `text-transparent mt-1 pt-2 text-lg px-8 w-full flex flex-col items-start gap-1 list-disc transition border-t border-black/0`,
+                    index === expandedIndex &&
+                      'text-neutral-800 delay-300 border-black/30'
+                  )}
+                >
+                  {cardContent[index].links.map((link) => (
+                    <li className="hover:underline" key={link.name}>
+                      <Link
+                        className="flex justify-center w-full"
+                        href={link.href}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
           </motion.div>
         ))}

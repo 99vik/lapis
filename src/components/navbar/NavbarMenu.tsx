@@ -64,7 +64,7 @@ export function NavbarMenu() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[320px] gap-3 p-4 md:grid-cols-1">
-              <ListItem title="MIR" href="/">
+              <ListItem title="Study of mechatronics and robotics" href="/">
                 MIR smjer tekst.
               </ListItem>
               <ListItem title="Graduate studies" href="/">
