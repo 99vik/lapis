@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import img1 from '@/../public/img1.jpg';
 import projectsImg from '@/../public/projectExp.jpg';
-import curriculumImg from '@/../public/curriculumExp.jpg';
+import studiesImg from '@/../public/studiesExp.jpg';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -17,8 +17,8 @@ export default function NavigationCards() {
 
   const cardContent = [
     {
-      imgSrc: curriculumImg.src,
-      title: 'Curriculum',
+      imgSrc: studiesImg.src,
+      title: 'Studies',
       links: [
         {
           name: 'Study of mechatronics and robotics',

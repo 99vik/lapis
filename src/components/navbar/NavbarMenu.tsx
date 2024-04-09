@@ -19,7 +19,7 @@ export function NavbarMenu() {
     <NavigationMenu className="hidden sm:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent w-[118px]">
+          <NavigationMenuTrigger className="bg-transparent w-[100px]">
             Projects
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -59,8 +59,8 @@ export function NavbarMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent w-[118px]">
-            Curriculum
+          <NavigationMenuTrigger className="bg-transparent w-[100px]">
+            Studies
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[320px] gap-3 p-4 md:grid-cols-1">
