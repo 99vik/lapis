@@ -11,7 +11,8 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
+    date: string;
+    id: number;
     link: string;
   }[];
   className?: string;
@@ -27,8 +28,8 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
-          key={item?.link}
+          href="/news"
+          key={item.id}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -36,7 +37,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-100 block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-white block  rounded-2xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -52,7 +53,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardDate>{item.date}</CardDate>
           </Card>
         </Link>
       ))}
@@ -70,16 +71,17 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'rounded-2xl h-[140px] w-[300px] p-4 overflow-hidden bg-white border border-white/50 group-hover:border-slate-700 relative z-20',
+        'rounded-xl px-3 py-2 h-[120px] w-[300px] bg-neutral-900 border border-neutral-600 relative z-20',
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative z-50 h-full">
+        <div className="h-full justify-between flex flex-col">{children}</div>
       </div>
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -88,12 +90,13 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn('text-zinc-100 font-bold tracking-wide mt-4', className)}>
+    <h4 className={cn('text-white line-clamp-3 tracking-wide', className)}>
       {children}
     </h4>
   );
 };
-export const CardDescription = ({
+
+export const CardDate = ({
   className,
   children,
 }: {
@@ -101,13 +104,13 @@ export const CardDescription = ({
   children: React.ReactNode;
 }) => {
   return (
-    <p
+    <h4
       className={cn(
-        'mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm',
+        'text-neutral-400 text-sm tracking-wide ml-auto',
         className
       )}
     >
       {children}
-    </p>
+    </h4>
   );
 };
