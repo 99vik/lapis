@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import Post from '@/types/Post';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -9,12 +10,7 @@ export const HoverEffect = ({
   items,
   className,
 }: {
-  items: {
-    title: string;
-    date: string;
-    id: number;
-    link: string;
-  }[];
+  items: Post[];
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
