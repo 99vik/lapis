@@ -21,9 +21,9 @@ export default async function News() {
   }));
 
   return (
-    <section className="px-14 mx-12 flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
+    <section className="sm:px-14 mx-auto xl:w-[1200px] flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
       <h2 className="text-2xl ">Latest news</h2>
-      <div className="h-[1px] my-2 bg-white/30 w-[930px]" />
+      <div className="h-[1px] my-2 bg-white/30 w-full" />
       <HoverEffect items={posts} />
     </section>
   );

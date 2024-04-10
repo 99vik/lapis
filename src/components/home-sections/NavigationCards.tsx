@@ -1,15 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import img1 from '@/../public/img1.jpg';
 import projectsImg from '@/../public/projectExp.jpg';
 import studiesImg from '@/../public/studiesExp.jpg';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useMediaQuery } from 'react-responsive';
 
 export default function NavigationCards() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const desktop = useMediaQuery({ query: '(min-width: 768px)' });
+
+  useEffect(() => {
+    setIsDesktop(desktop);
+  }, [desktop]);
 
   function handleCardHover(index: number) {
     setExpandedIndex(index === expandedIndex ? -1 : index);
@@ -89,14 +96,16 @@ export default function NavigationCards() {
           <motion.div
             key={index}
             className={cn(
-              'card h-[440px] bg-cover bg-center rounded-[20px] border',
+              'card h-[360px] my-1 md:my-0 md:h-[440px] bg-cover bg-center rounded-[20px] border',
               index === expandedIndex && 'expanded'
             )}
             variants={cardVariants}
             initial="collapsed"
             animate={index === expandedIndex ? 'expanded' : 'collapsed'}
             transition={{ duration: 0.4 }}
-            onHoverStart={() => handleCardHover(index)}
+            onHoverStart={() => {
+              if (isDesktop) handleCardHover(index);
+            }}
             onHoverEnd={() => setExpandedIndex(-1)}
             style={{
               backgroundImage: `url(${cardContent[index].imgSrc})`,
@@ -109,16 +118,16 @@ export default function NavigationCards() {
                 animate={index === expandedIndex ? 'expanded' : 'collapsed'}
                 transition={{ duration: 0.4 }}
                 className={cn(
-                  'card-footer rounded-b-[20px] bg-primary/70 flex flex-col items-center justify-start pt-1 pb-4'
+                  'card-footer max-md:min-h-[140px] rounded-b-[20px] bg-primary/70 flex flex-col items-center justify-start pt-1 pb-4'
                 )}
               >
-                <h2 className="text-2xl font-semibold text-black">
+                <h2 className="text-xl md:text-2xl font-semibold text-black">
                   {cardContent[index].title}
                 </h2>
                 <ul
                   className={cn(
-                    `text-transparent mt-1 pt-2 text-lg px-8 w-full flex flex-col items-start gap-1 list-disc transition border-t border-black/0`,
-                    index === expandedIndex &&
+                    `text-transparent mt-1 pt-2 md:text-lg px-6 md:px-8 w-full flex flex-col items-start gap-1 list-disc transition border-t border-black/0`,
+                    (index === expandedIndex || !isDesktop) &&
                       'text-neutral-800 delay-300 border-black/30'
                   )}
                 >
