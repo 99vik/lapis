@@ -33,7 +33,9 @@ export default async function Page() {
             <article key={post.id} className="py-4">
               <div className="w-fit">
                 <Link
-                  href={`/news/${post.id}`}
+                  href={`/news/${post.title
+                    .toLowerCase()
+                    .replaceAll(' ', '-')}`}
                   className="hover:underline text-xl font-semibold"
                 >
                   {post.title}
