@@ -1,4 +1,3 @@
-import { SparklesTitle } from '@/components/SparklesTitle';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +7,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <SparklesTitle title="Mixed reality applications" />
       <p>midex reality applications</p>
     </main>
   );

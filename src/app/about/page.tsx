@@ -1,5 +1,5 @@
 import { LocationPin } from '@/components/LocationPin';
-import { SparklesTitle } from '@/components/SparklesTitle';
+import MainTitle from '@/components/MainTitle';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="min-h-screen">
-      <SparklesTitle title="About us" />
+      <MainTitle title="About us" />
       <LocationPin />
     </main>
   );

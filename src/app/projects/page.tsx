@@ -1,5 +1,5 @@
+import MainTitle from '@/components/MainTitle';
 import { ProjectsTabs } from '@/components/ProjectsTabs';
-import { SparklesTitle } from '@/components/SparklesTitle';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className="overflow-x-hidden">
-      <SparklesTitle title="Projects" />
+      <MainTitle title="Projects" />
       <ProjectsTabs />
     </main>
   );
