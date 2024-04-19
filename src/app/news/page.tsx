@@ -1,3 +1,4 @@
+import { createContentURI } from '@/lib/utils';
 import Post from '@/types/Post';
 import dateFormat from 'dateformat';
 import Link from 'next/link';
@@ -22,7 +23,7 @@ export default async function Page() {
 
   return (
     <main className="flex items-center justify-center mx-2 sm:mx-0 my-4 sm:my-10 py-6">
-      <div className="bg-background flex flex-col py-4 border rounded-xl w-[900px]">
+      <div className="bg-black flex flex-col py-4 border rounded-xl w-[900px]">
         <div className="px-4 sm:px-8">
           <h1 className="text-4xl font-bold">News</h1>
           <p className="text-neutral-400">Latest laboratory news and events</p>
@@ -33,9 +34,7 @@ export default async function Page() {
             <article key={post.id} className="py-4">
               <div className="w-fit">
                 <Link
-                  href={`/news/${post.title
-                    .toLowerCase()
-                    .replaceAll(' ', '-')}`}
+                  href={`/news/${createContentURI(post.title)}`}
                   className="hover:underline text-xl sm:text-xl font-semibold"
                 >
                   {post.title}
