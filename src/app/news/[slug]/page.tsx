@@ -1,35 +1,10 @@
-import { createContentURI } from '@/lib/utils';
+import { createContentURI, fetchPostsData } from '@/lib/utils';
 import Post from '@/types/Post';
-import dateFormat from 'dateformat';
 import { notFound } from 'next/navigation';
-
-export async function fetchPostsData(slug: string) {
-  const response = await fetch(`${process.env.CMS_URI}`, {
-    next: {
-      tags: ['posts'],
-    },
-    method: 'GET',
-    headers: {
-      authorization: `${process.env.API_KEY}`,
-    },
-  });
-
-  const data = await response.json();
-  let posts: Post[] = data.docs;
-  posts = posts.map((post) => ({
-    ...post,
-    date: dateFormat(new Date(post.createdAt), 'd. mmmm yyyy.'),
-    slug: post.id.toString(),
-  }));
-
-  const post = posts.find(
-    (post) => post.title.toLowerCase().replaceAll(' ', '-') === slug
-  );
-  return post;
-}
 
 export async function generateStaticParams() {
   const response = await fetch(`${process.env.CMS_URI}`, {
+    cache: 'no-store',
     next: {
       tags: ['posts'],
     },
@@ -40,11 +15,15 @@ export async function generateStaticParams() {
   });
 
   const data = await response.json();
-  let posts: Post[] = data.docs;
+  if (data.docs) {
+    let posts: Post[] = data.docs;
 
-  return posts.map((post) => ({
-    slug: createContentURI(post.title),
-  }));
+    return posts.map((post) => ({
+      slug: createContentURI(post.title),
+    }));
+  } else {
+    return ['slug'];
+  }
 }
 
 export default async function Page({

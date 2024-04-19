@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default async function News() {
   const response = await fetch(`${process.env.CMS_URI}`, {
+    cache: 'no-store',
     next: {
       tags: ['posts'],
     },
@@ -15,11 +16,24 @@ export default async function News() {
   });
 
   const data = await response.json();
-  let posts: Post[] = data.docs.slice(0, 6);
-  posts = posts.map((post) => ({
-    ...post,
-    date: dateFormat(new Date(post.createdAt), 'd. mmmm yyyy.'),
-  }));
+  let posts: Post[];
+  if (data.docs) {
+    posts = data.docs.slice(0, 6);
+    posts = posts.map((post) => ({
+      ...post,
+      date: dateFormat(new Date(post.createdAt), 'd. mmmm yyyy.'),
+    }));
+  } else {
+    posts = [
+      {
+        id: 0,
+        title: 'slug',
+        content: 'slug',
+        createdAt: String(new Date()),
+        date: String(new Date()),
+      },
+    ];
+  }
 
   return (
     <section className="sm:px-14 mx-3 xl:mx-auto xl:w-[1200px] flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
