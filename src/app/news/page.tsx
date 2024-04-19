@@ -21,14 +21,14 @@ export default async function Page() {
   }));
 
   return (
-    <main className="flex items-center justify-center py-6">
+    <main className="flex items-center justify-center mx-2 sm:mx-0 my-4 sm:my-10 py-6">
       <div className="bg-background flex flex-col py-4 border rounded-xl w-[900px]">
-        <div className="px-8">
+        <div className="px-4 sm:px-8">
           <h1 className="text-4xl font-bold">News</h1>
           <p className="text-neutral-400">Latest laboratory news and events</p>
         </div>
         <div className="w-full h-[1px] bg-neutral-600 my-2" />
-        <div className="divide-y px-8">
+        <div className="divide-y px-4 sm:px-8">
           {posts.map((post) => (
             <article key={post.id} className="py-4">
               <div className="w-fit">
@@ -36,12 +36,12 @@ export default async function Page() {
                   href={`/news/${post.title
                     .toLowerCase()
                     .replaceAll(' ', '-')}`}
-                  className="hover:underline text-xl font-semibold"
+                  className="hover:underline text-xl sm:text-xl font-semibold"
                 >
                   {post.title}
                 </Link>
               </div>
-              <p className="font-light my-4 text-neutral-200 px-3">
+              <p className="text-lg sm:text-base my-4 text-neutral-200">
                 {post.content}
               </p>
               <p className="text-neutral-400 text-sm w-full text-right">
