@@ -18,7 +18,10 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
 
     if (index == path.length - 1) {
       return (
-        <>
+        <div
+          key={link}
+          className="flex flex-wrap items-center gap-1.5 break-words sm:gap-2.5"
+        >
           <BreadcrumbSeparator>
             <Slash />
           </BreadcrumbSeparator>
@@ -27,11 +30,14 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
               {link}
             </BreadcrumbPage>
           </BreadcrumbItem>
-        </>
+        </div>
       );
     } else {
       return (
-        <>
+        <div
+          key={link}
+          className="flex flex-wrap items-center gap-1.5 break-words sm:gap-2.5"
+        >
           <BreadcrumbSeparator>
             <Slash />
           </BreadcrumbSeparator>
@@ -43,7 +49,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
               {link}
             </BreadcrumbLink>
           </BreadcrumbItem>
-        </>
+        </div>
       );
     }
   });
