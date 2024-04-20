@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/navbar';

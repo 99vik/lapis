@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function createContentURI(title: string) {
+export function titleToURI(title: string) {
   return title.trim().toLowerCase().replaceAll(' ', '-');
 }
 
@@ -30,6 +30,6 @@ export async function fetchPostsData(slug: string) {
     slug: post.id.toString(),
   }));
 
-  const post = posts.find((post) => createContentURI(post.title) === slug);
+  const post = posts.find((post) => titleToURI(post.title) === slug);
   return post;
 }

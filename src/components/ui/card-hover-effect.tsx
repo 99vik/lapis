@@ -1,6 +1,6 @@
 'use client';
 
-import { cn, createContentURI } from '@/lib/utils';
+import { cn, titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <Link
-          href={`/news/${createContentURI(item.title)}`}
+          href={`/news/${titleToURI(item.title)}`}
           key={item.id}
           className="relative group block p-[5px] h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
