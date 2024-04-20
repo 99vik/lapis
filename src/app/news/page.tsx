@@ -2,6 +2,7 @@ import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
 import dateFormat from 'dateformat';
+import { ArrowUpRightFromSquare } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function Page() {
@@ -37,12 +38,13 @@ export default async function Page() {
           <div className="divide-y px-4 sm:px-8">
             {posts.map((post) => (
               <article key={post.id} className="py-4">
-                <div className="w-fit">
+                <div className="w-fit ">
                   <Link
                     href={`/news/${titleToURI(post.title)}`}
-                    className="hover:underline text-xl sm:text-xl font-semibold"
+                    className="hover:underline text-xl flex gap-2 items-center sm:text-xl font-semibold"
                   >
                     {post.title}
+                    <ArrowUpRightFromSquare size={15} strokeWidth={3} />
                   </Link>
                 </div>
                 <p className="text-lg line-clamp-2 sm:text-base my-4 text-neutral-200">

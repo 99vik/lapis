@@ -8,7 +8,7 @@ export default function TransparencyControl() {
 
   useEffect(() => {
     function scrollCheck() {
-      window.scrollY >= 50 ? setTransparent(false) : setTransparent(true);
+      window.scrollY > 0 ? setTransparent(false) : setTransparent(true);
     }
     scrollCheck();
     window.addEventListener('scroll', scrollCheck);
