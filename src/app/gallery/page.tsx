@@ -1,7 +1,12 @@
+import DisplayedBreadcrumb from '@/components/breadcrumb';
+
 export default function Page() {
   return (
-    <main>
-      <p>galery</p>
-    </main>
+    <>
+      <DisplayedBreadcrumb path={['Gallery']} />
+      <main>
+        <p>galery</p>
+      </main>
+    </>
   );
 }

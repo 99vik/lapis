@@ -1,5 +1,6 @@
 import { LocationPin } from '@/components/LocationPin';
 import MainTitle from '@/components/MainTitle';
+import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,9 +9,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
-      <MainTitle title="About us" />
-      <LocationPin />
-    </main>
+    <>
+      <DisplayedBreadcrumb path={['About']} />
+      <main className="">
+        <LocationPin />
+      </main>
+    </>
   );
 }

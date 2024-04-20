@@ -41,8 +41,8 @@ export default async function Page({
   return (
     <>
       <DisplayedBreadcrumb path={['News', post.title]} />
-      <main className="flex flex-col items-center w-full px-3 min-h-[calc(100vh-88px-225px)] sm:min-h-[calc(100vh-72px-125px)]">
-        <div className="bg-black mt-2 mb-8 flex flex-col py-4 border rounded-xl w-full flex-1 max-w-[900px]">
+      <main className="flex flex-col items-center min-h-[calc(100vh-88px-225px)] sm:min-h-[calc(100vh-72px-125px)] mx-3 sm:mx-0 mt-2 mb-8">
+        <div className="bg-black flex flex-col py-4 border rounded-xl w-full flex-1 max-w-[900px]">
           <div className="px-4 sm:px-6">
             <h1 className="text-2xl font-semibold text-left">{post.title}</h1>
           </div>
