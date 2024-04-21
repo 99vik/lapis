@@ -8,15 +8,18 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 
-export default function ProjectImageCarousel() {
+export default function ProjectImageCarousel({ images }: { images: string[] }) {
   return (
-    <Carousel className="w-full self-center max-w-xs">
+    <Carousel className="self-center w-[700px]">
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {images.map((image, index) => (
           <CarouselItem key={index}>
-            <div className="flex border aspect-square items-center justify-center p-6">
-              <span className="text-4xl font-semibold">{index + 1}</span>
-            </div>
+            <div
+              style={{
+                backgroundImage: `url(${image})`,
+              }}
+              className="flex bg-center bg-contain bg-no-repeat h-[400px]"
+            ></div>
           </CarouselItem>
         ))}
       </CarouselContent>

@@ -1,11 +1,18 @@
 import ProjectImageCarousel from '@/components/projects/ProjectsImageCarousel';
 import { EvervaultCard } from '@/components/ui/evervault-card';
 import Link from 'next/link';
+import img1 from '@/../public/projects/amicorn/1.jpg';
+import img2 from '@/../public/projects/amicorn/2.jpg';
+import img3 from '@/../public/projects/amicorn/3.jpg';
+import img4 from '@/../public/projects/amicorn/4.jpg';
+import img0 from '@/../public/projectExp.jpg';
 
 export default function Page() {
+  const images = [img0.src, img1.src, img2.src, img3.src, img4.src];
+
   return (
     <>
-      <ProjectImageCarousel />
+      <ProjectImageCarousel images={images} />
       <p>
         Maecenas ac lacus mauris. Mauris egestas leo ut sollicitudin vehicula.
         Nulla elementum dui metus, in volutpat massa bibendum eu. Cras feugiat
