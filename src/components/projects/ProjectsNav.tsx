@@ -6,7 +6,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { cn } from '@/lib/utils';
+import { cn, titleToURI } from '@/lib/utils';
 import Link from 'next/link';
 
 export default function ProjectsNav() {
@@ -14,15 +14,15 @@ export default function ProjectsNav() {
   const [studentIsOpen, setStudentIsOpen] = useState(true);
 
   const projects = {
-    scientific: ['AMICORN project', 'Smart LAB', 'Mixed Reality'],
+    scientific: ['Amicorn project', 'Smart lab', 'Mixed reality'],
     student: ['Project1', 'Project2', 'Project3', 'Project4'],
   };
 
   const scientificProjects = projects.scientific.map((project) => (
     <Link
       key={project}
-      href="/projects"
-      className="px-6 hover:bg-neutral-800 p-1 font-sans rounded-sm"
+      href={`/projects/scientific-projects/${titleToURI(project)}`}
+      className="px-6 hover:bg-neutral-800 p-2 font-sans rounded-sm"
     >
       {project}
     </Link>
@@ -32,18 +32,17 @@ export default function ProjectsNav() {
     <Link
       key={project}
       href="/projects"
-      className="px-6 hover:bg-neutral-800 p-1 font-sans rounded-sm"
+      className="px-6 hover:bg-neutral-800 p-2 font-sans rounded-sm"
     >
       {project}
     </Link>
   ));
 
   return (
-    <nav className="space-y-2 py-4">
-      <Link href="/projects" className="text-xl flex justify-center">
-        Projects
+    <nav className="divide-y space-y-2 py-4">
+      <Link href="/projects" className={cn('text-base pl-9 hover:underline')}>
+        About LAPIS projects
       </Link>
-      <div className="w-full h-[1px] bg-neutral-600" />
       <Collapsible open={scientificIsOpen} onOpenChange={setScientificIsOpen}>
         <div className="flex items-center justify-start">
           <CollapsibleTrigger asChild>
@@ -63,7 +62,7 @@ export default function ProjectsNav() {
           </CollapsibleTrigger>
           <Link
             href="/projects/scientific-projects"
-            className="whitespace-nowrap"
+            className="whitespace-nowrap hover:underline"
           >
             Scientific projects
           </Link>
@@ -94,7 +93,10 @@ export default function ProjectsNav() {
               <span className="sr-only">Toggle</span>
             </Button>
           </CollapsibleTrigger>
-          <Link href="/projects/student-projects" className="whitespace-nowrap">
+          <Link
+            href="/projects/student-projects"
+            className="whitespace-nowrap hover:underline"
+          >
             Student projects
           </Link>
         </div>

@@ -34,7 +34,7 @@ export const EvervaultCard = ({
   return (
     <div
       className={cn(
-        'bg-zinc-900 hover:bg-zinc-700 group aspect-square flex items-center justify-center w-full h-full relative',
+        'bg-zinc-600 hover:bg-zinc-700 group aspect-square flex items-center justify-center w-full h-full relative',
         className
       )}
     >

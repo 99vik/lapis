@@ -19,51 +19,36 @@ export function NavbarMenu() {
     <NavigationMenu className="hidden sm:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent w-[100px]">
-            Projects
-          </NavigationMenuTrigger>
+          <Link href="/projects">
+            <NavigationMenuTrigger className="bg-transparent w-[100px]">
+              Projects
+            </NavigationMenuTrigger>
+          </Link>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-3 w-[350px] md:w-[380px] grid-cols-[.7fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <Link
-                    className="flex h-full w-full select-none flex-col justify-center rounded-md bg-muted p-4 no-underline outline-none focus:shadow-md"
-                    href="/projects"
-                  >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      All projects
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      View a list of all of our projects.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/projects/amicorn" title="AMICORC">
-                Real time online emotion recognition robot.
-              </ListItem>
+            <ul className="grid w-[320px] gap-2 p-2 md:grid-cols-1">
               <ListItem
-                href="/projects/cartesian-coordinate-robot"
-                title="Cartesian robot"
+                title="Scientific projects"
+                href="/projects/scientific-projects"
               >
-                Cartesian coordinate robot project.
+                Scientific projects text
               </ListItem>
               <ListItem
-                target="_blank"
-                href="https://repozitorij.fsb.unizg.hr/islandora/search/tomislav%20stipan%C4%8Di%C4%87?type=dismax"
                 title="Student projects"
+                href="/projects/student-projects"
               >
-                View projects of our students.
+                Student projects text
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent w-[100px]">
-            Studies
-          </NavigationMenuTrigger>
+          <Link href="/">
+            <NavigationMenuTrigger className="bg-transparent w-[100px]">
+              Studies
+            </NavigationMenuTrigger>
+          </Link>
           <NavigationMenuContent>
-            <ul className="grid w-[320px] gap-3 p-4 md:grid-cols-1">
+            <ul className="grid w-[320px] gap-2 p-2 md:grid-cols-1">
               <ListItem title="Study of mechatronics and robotics" href="/">
                 MIR smjer tekst.
               </ListItem>
