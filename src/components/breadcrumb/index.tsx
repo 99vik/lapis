@@ -55,7 +55,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
   });
 
   return (
-    <Breadcrumb className="max-w-[90vw] overflow-x-scroll sm:overflow-x-clip  w-fit mb-4 mx-4 sm:mx-16">
+    <Breadcrumb className="max-w-[90vw] overflow-x-auto sm:overflow-x-clip  w-fit mb-4 mx-4 sm:mx-16">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink className="text-zinc-300" href="/">

@@ -16,7 +16,7 @@ export default function Page() {
     <>
       <DisplayedBreadcrumb path={['Gallery']} />
 
-      <main className="grid grid-cols-5 gap-4 mt-2 mx-2 sm:mx-6 lg:mx-14 mb-8">
+      <main className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-2 mx-2 sm:mx-6 lg:mx-14 mb-8">
         <div className="rounded-xl col-span-2 h-[200px]">
           <Image
             width={900}
