@@ -3,7 +3,6 @@
 import DisplayedBreadcrumb from '@/components/breadcrumb';
 import ProjectsNav from '@/components/projects/ProjectsNav';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
 
 export default function ProjectsLayout({
   children,
