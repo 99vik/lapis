@@ -8,7 +8,7 @@ import img3 from '@/../public/projects/amicorn/3.jpg';
 import img4 from '@/../public/projects/amicorn/4.jpg';
 import img5 from '@/../public/img1.jpg';
 import img6 from '@/../public/studiesExp.jpg';
-import img7 from '@/../public/img2.jpg';
+import img7 from '@/../public/img4.jpg';
 import img8 from '@/../public/img3.jpeg';
 
 import Image from 'next/image';
