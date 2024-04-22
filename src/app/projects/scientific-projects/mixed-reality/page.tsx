@@ -4,7 +4,7 @@ import img1 from '@/../public/projects/amicorn/1.jpg';
 import img2 from '@/../public/projects/amicorn/2.jpg';
 
 export default function Page() {
-  const images = [img2.src, img0.src, img1.src];
+  const images = [img1.src, img2.src, img0.src];
 
   return (
     <>

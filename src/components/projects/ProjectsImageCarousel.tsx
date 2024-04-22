@@ -10,7 +10,7 @@ import {
 
 export default function ProjectImageCarousel({ images }: { images: string[] }) {
   return (
-    <Carousel className="self-center w-[800px]">
+    <Carousel className="self-center w-full max-w-[700px]">
       <CarouselContent>
         {images.map((image, index) => (
           <CarouselItem key={index}>
@@ -18,7 +18,7 @@ export default function ProjectImageCarousel({ images }: { images: string[] }) {
               style={{
                 backgroundImage: `url(${image})`,
               }}
-              className="flex bg-center bg-contain bg-no-repeat h-[450px]"
+              className="flex bg-center bg-contain bg-no-repeat aspect-video"
             ></div>
           </CarouselItem>
         ))}

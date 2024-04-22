@@ -39,7 +39,7 @@ export default function ProjectsNav() {
   ));
 
   return (
-    <nav className="divide-y space-y-2 py-4">
+    <nav className="divide-y space-y-2 border-b-2 border-white md:border-none py-4 col-span-2 xl:col-span-1">
       <Link href="/projects" className={cn('text-base pl-9 hover:underline')}>
         About LAPIS projects
       </Link>
