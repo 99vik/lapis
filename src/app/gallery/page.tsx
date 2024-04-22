@@ -39,6 +39,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img2.src);
+            }}
             width={5760}
             height={2592}
             alt="gallery"
@@ -48,6 +52,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img3.src);
+            }}
             height={1308}
             width={1168}
             alt="gallery"
@@ -57,6 +65,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img4.src);
+            }}
             height={1216}
             width={806}
             alt="gallery"
@@ -66,6 +78,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img1.src);
+            }}
             width={2592}
             height={5760}
             alt="gallery"
@@ -75,6 +91,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img5.src);
+            }}
             height={900}
             width={600}
             alt="gallery"
@@ -84,6 +104,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img6.src);
+            }}
             height={900}
             width={600}
             alt="gallery"
@@ -93,6 +117,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl col-span-2 h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img8.src);
+            }}
             height={2048}
             width={1536}
             alt="gallery"
@@ -102,6 +130,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl col-span-2 h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img7.src);
+            }}
             height={6000}
             width={4000}
             alt="gallery"
@@ -111,6 +143,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img2.src);
+            }}
             width={5760}
             height={2592}
             alt="gallery"
@@ -120,6 +156,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img3.src);
+            }}
             height={1308}
             width={1168}
             alt="gallery"
@@ -129,6 +169,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img4.src);
+            }}
             height={1216}
             width={806}
             alt="gallery"
@@ -138,6 +182,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img1.src);
+            }}
             width={2592}
             height={5760}
             alt="gallery"
@@ -147,6 +195,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img5.src);
+            }}
             height={900}
             width={600}
             alt="gallery"
@@ -156,6 +208,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img6.src);
+            }}
             height={900}
             width={600}
             alt="gallery"
@@ -165,6 +221,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl col-span-2 h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img8.src);
+            }}
             height={2048}
             width={1536}
             alt="gallery"
@@ -174,6 +234,10 @@ export default function Page() {
         </div>
         <div className="rounded-xl col-span-2 h-[200px]">
           <Image
+            onClick={(e) => {
+              setModalOpen(true);
+              setImage(img7.src);
+            }}
             height={6000}
             width={4000}
             alt="gallery"
