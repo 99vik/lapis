@@ -35,7 +35,7 @@ export default async function News() {
   }
 
   return (
-    <section className="sm:px-14 mx-3 xl:mx-auto xl:w-[1200px] flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
+    <section className="sm:px-14 mx-2 xl:mx-auto xl:w-[1200px] flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
       <Link href="/news" className="hover:underline">
         <h2 className="text-2xl ">Latest news</h2>
       </Link>

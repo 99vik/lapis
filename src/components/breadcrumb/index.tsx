@@ -20,7 +20,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
       return (
         <div
           key={link}
-          className="flex flex-wrap items-center gap-1.5 break-words sm:gap-2.5"
+          className="flex flex-nowrap items-center gap-1.5 break-words sm:gap-2.5"
         >
           <BreadcrumbSeparator>
             <Slash />
@@ -36,7 +36,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
       return (
         <div
           key={link}
-          className="flex flex-wrap items-center gap-1.5 break-words sm:gap-2.5"
+          className="flex flex-nowrap items-center gap-1.5 break-words sm:gap-2.5"
         >
           <BreadcrumbSeparator>
             <Slash />
@@ -55,7 +55,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
   });
 
   return (
-    <Breadcrumb className="w-fit mb-4 mx-4 sm:mx-16">
+    <Breadcrumb className="max-w-[90vw] overflow-x-scroll sm:overflow-x-clip  w-fit mb-4 mx-4 sm:mx-16">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink className="text-zinc-300" href="/">
