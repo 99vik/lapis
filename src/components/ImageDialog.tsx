@@ -15,11 +15,10 @@ export function ImageDialog({
 
   return (
     <Dialog open={open} onOpenChange={() => setModalOpen(false)}>
-      <DialogContent className="flex p-2 sm:p-6 justify-center rounded-lg items-center w-[95vw] h-[90vh] sm:w-[85vw] sm:h-[80vh]">
+      <DialogContent className="rounded-lg w-[95vw] h-[90vh] sm:w-[85vw] sm:h-[80vh]">
         <Image
-          height={1308}
-          width={1168}
-          className="object-center h-full w-full rounded-xl object-scale-down"
+          fill={true}
+          className="object-scale-down my-auto max-h-[95%]"
           alt="gallery"
           src={image}
         />
