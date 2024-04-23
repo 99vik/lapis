@@ -22,7 +22,7 @@ export default function ProjectsNav() {
     <Link
       key={project}
       href={`/projects/scientific-projects/${titleToURI(project)}`}
-      className="px-6 hover:bg-neutral-800 p-2 font-sans rounded-sm"
+      className="px-6 sm:hover:bg-neutral-800 p-2 font-sans rounded-sm"
     >
       {project}
     </Link>
@@ -32,7 +32,7 @@ export default function ProjectsNav() {
     <Link
       key={project}
       href="/projects"
-      className="px-6 hover:bg-neutral-800 p-2 font-sans rounded-sm"
+      className="px-6 sm:hover:bg-neutral-800 p-2 font-sans rounded-sm"
     >
       {project}
     </Link>
@@ -40,7 +40,10 @@ export default function ProjectsNav() {
 
   return (
     <nav className="divide-y space-y-2 border-b-2 border-white md:border-none py-4 col-span-2 xl:col-span-1">
-      <Link href="/projects" className={cn('text-base pl-9 hover:underline')}>
+      <Link
+        href="/projects"
+        className={cn('text-base pl-9 sm:hover:underline')}
+      >
         About LAPIS projects
       </Link>
       <Collapsible open={scientificIsOpen} onOpenChange={setScientificIsOpen}>
@@ -62,7 +65,7 @@ export default function ProjectsNav() {
           </CollapsibleTrigger>
           <Link
             href="/projects/scientific-projects"
-            className="whitespace-nowrap hover:underline"
+            className="whitespace-nowrap sm:hover:underline"
           >
             Scientific projects
           </Link>
@@ -95,7 +98,7 @@ export default function ProjectsNav() {
           </CollapsibleTrigger>
           <Link
             href="/projects/student-projects"
-            className="whitespace-nowrap hover:underline"
+            className="whitespace-nowrap sm:hover:underline"
           >
             Student projects
           </Link>
