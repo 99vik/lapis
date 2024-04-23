@@ -15,7 +15,7 @@ export default function MobileMenu() {
   return (
     <>
       <Sheet>
-        <SheetTrigger className="sm:hidden" asChild>
+        <SheetTrigger className="md:hidden" asChild>
           <Button
             variant="ghost"
             className="w-fit h-fit p-0 hover:bg-transparent"

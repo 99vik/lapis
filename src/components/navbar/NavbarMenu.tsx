@@ -16,7 +16,7 @@ import {
 
 export function NavbarMenu() {
   return (
-    <NavigationMenu className="hidden sm:block">
+    <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/projects">
@@ -82,6 +82,15 @@ export function NavbarMenu() {
               className={navigationMenuTriggerStyle({ className: 'w-[90px]' })}
             >
               About us
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/contact" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={navigationMenuTriggerStyle({ className: 'w-[90px]' })}
+            >
+              Contact
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

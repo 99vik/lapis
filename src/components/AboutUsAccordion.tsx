@@ -7,7 +7,7 @@ import {
 
 export function AboutUsAccordion() {
   return (
-    <Accordion type="single" collapsible className="w-[300px] mx-auto my-auto">
+    <Accordion type="single" collapsible className="w-[350px] mx-auto my-5">
       <AccordionItem value="item-1">
         <AccordionTrigger>Question1?</AccordionTrigger>
         <AccordionContent>Question 1 answer</AccordionContent>
