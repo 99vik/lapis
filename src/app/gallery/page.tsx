@@ -11,14 +11,14 @@ import img6 from '@/../public/studiesExp.jpg';
 import img7 from '@/../public/img4.jpg';
 import img8 from '@/../public/img3.jpg';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { ImageDialog } from '@/components/ImageDialog';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [image, setImage] = useState<string | undefined>(undefined);
+  const [image, setImage] = useState<StaticImageData | undefined>(undefined);
 
   const images = [img0, img2, img3, img4, img1, img5, img6, img8, img7];
 
@@ -39,9 +39,10 @@ export default function Page() {
               <Image
                 onClick={() => {
                   setModalOpen(true);
-                  setImage(image.src);
+                  setImage(image);
                 }}
                 src={image}
+                quality={30}
                 alt="gallery image"
                 className="object-cover object-center h-full w-full rounded-xl cursor-pointer"
                 placeholder="blur"

@@ -1,5 +1,5 @@
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
 
 export function ImageDialog({
@@ -9,17 +9,19 @@ export function ImageDialog({
 }: {
   open: boolean;
   setModalOpen: Dispatch<SetStateAction<boolean>>;
-  image: string | undefined;
+  image: StaticImageData | undefined;
 }) {
   if (!image) return;
 
   return (
     <Dialog open={open} onOpenChange={() => setModalOpen(false)}>
-      <DialogContent className="rounded-lg w-[95vw] h-[90vh] sm:w-[85vw] sm:h-[80vh]">
+      <DialogContent className="rounded-lg w-[95vw] h-[60vh] sm:w-[85vw] sm:h-[80vh]">
         <Image
+          placeholder="blur"
           fill={true}
           className="object-scale-down my-auto max-h-[95%]"
-          alt="gallery"
+          alt=""
+          quality={100}
           src={image}
         />
       </DialogContent>
