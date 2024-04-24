@@ -26,7 +26,7 @@ export default function ProjectsLayout({
     <>
       <DisplayedBreadcrumb path={path} />
       <main className="md:grid md:grid-cols-7 xl:grid-cols-6 md:divide-neutral-600 divide-x bg-black border rounded-xl min-h-[calc(100vh-130px)] mt-2 mx-2 sm:mx-6 lg:mx-14 mb-6">
-        <StudiesNav />
+        <StudiesNav path={path} />
         <div className="col-span-5 space-y-3 py-4 flex flex-col">
           <h1 className="text-3xl font-semibold flex justify-center">
             {path[path.length - 1]}
