@@ -20,7 +20,7 @@ export default function Page() {
             placeholder="blur"
             src={img}
             alt=""
-            className="w-[310px] sm:w-[380px] h-auto max-sm:mx-auto sm:float-start mr-5 rounded-xl"
+            className="w-[310px] sm:w-[380px] h-auto max-sm:mx-auto sm:float-start mb-1 mr-7 rounded-xl"
           />
           <p>
             Maecenas ac lacus mauris. Mauris egestas leo ut sollicitudin

@@ -29,11 +29,11 @@ export default function NavigationCards() {
       links: [
         {
           name: 'Study of mechatronics and robotics',
-          href: '/studies',
+          href: '/studies/study-of-mechatronics-and-robotics',
         },
         {
           name: 'Graduate studies',
-          href: 'studies',
+          href: '/studies/graduate-studies',
         },
       ],
     },

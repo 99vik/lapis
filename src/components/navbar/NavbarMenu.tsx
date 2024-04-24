@@ -51,11 +51,14 @@ export function NavbarMenu() {
             <ul className="grid w-[320px] gap-2 p-2 md:grid-cols-1">
               <ListItem
                 title="Study of mechatronics and robotics"
-                href="/study-of-mechatronics-and-robotics"
+                href="/studies/study-of-mechatronics-and-robotics"
               >
                 Mechatronics and robotics study information.
               </ListItem>
-              <ListItem title="Graduate studies" href="/graduate-studies">
+              <ListItem
+                title="Graduate studies"
+                href="/studies/graduate-studies"
+              >
                 Graduate studies information.
               </ListItem>
             </ul>

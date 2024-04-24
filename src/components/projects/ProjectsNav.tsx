@@ -48,8 +48,6 @@ export default function ProjectsNav({ path }: { path: string[] }) {
     </Link>
   ));
 
-  console.log(path.slice(-1));
-
   return (
     <nav className="divide-y space-y-2 border-b-2 border-white md:border-none py-4 col-span-2 xl:col-span-1">
       <Link
