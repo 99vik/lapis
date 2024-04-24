@@ -30,30 +30,33 @@ export function NavbarMenu() {
                 title="Scientific projects"
                 href="/projects/scientific-projects"
               >
-                Scientific projects text
+                Official laboratory&apos;s projects.
               </ListItem>
               <ListItem
                 title="Student projects"
                 href="/projects/student-projects"
               >
-                Student projects text
+                Projects of our students.
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/">
+          <Link href="/studies">
             <NavigationMenuTrigger className="bg-transparent w-[100px]">
               Studies
             </NavigationMenuTrigger>
           </Link>
           <NavigationMenuContent>
             <ul className="grid w-[320px] gap-2 p-2 md:grid-cols-1">
-              <ListItem title="Study of mechatronics and robotics" href="/">
-                MIR smjer tekst.
+              <ListItem
+                title="Study of mechatronics and robotics"
+                href="/studies"
+              >
+                Mechatronics and robotics study information.
               </ListItem>
-              <ListItem title="Graduate studies" href="/">
-                Graduate studies text.{' '}
+              <ListItem title="Graduate studies" href="/studies">
+                Graduate studies information.
               </ListItem>
             </ul>
           </NavigationMenuContent>

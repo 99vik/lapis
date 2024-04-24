@@ -1,5 +1,4 @@
 import { AboutUsAccordion } from '@/components/AboutUsAccordion';
-import { LocationPin } from '@/components/LocationPin';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { Metadata } from 'next';
 import Image from 'next/image';

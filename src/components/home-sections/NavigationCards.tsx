@@ -29,11 +29,11 @@ export default function NavigationCards() {
       links: [
         {
           name: 'Study of mechatronics and robotics',
-          href: '/',
+          href: '/studies',
         },
         {
           name: 'Graduate studies',
-          href: '/',
+          href: 'studies',
         },
       ],
     },
@@ -43,11 +43,11 @@ export default function NavigationCards() {
       links: [
         {
           name: 'Scientific projects',
-          href: '/projects',
+          href: '/projects/scientific-projects',
         },
         {
           name: 'Student projects',
-          href: '/projects',
+          href: '/projects/student-projects',
         },
       ],
     },
@@ -56,16 +56,16 @@ export default function NavigationCards() {
       title: 'LAPIS',
       links: [
         {
-          name: 'News',
-          href: '/news',
+          name: 'Gallery',
+          href: '/gallery',
         },
         {
           name: 'About',
           href: '/about',
         },
         {
-          name: 'Gallery',
-          href: '/gallery',
+          name: 'Contact',
+          href: '/contact',
         },
       ],
     },
@@ -82,7 +82,7 @@ export default function NavigationCards() {
 
   const heightVariants = {
     expanded: {
-      height: '160px',
+      height: '150px',
     },
     collapsed: {
       height: '45px',
@@ -118,21 +118,21 @@ export default function NavigationCards() {
                 animate={index === expandedIndex ? 'expanded' : 'collapsed'}
                 transition={{ duration: 0.4 }}
                 className={cn(
-                  'card-footer max-md:min-h-[140px] rounded-b-[20px] bg-primary/70 flex flex-col items-center justify-start pt-1 pb-4'
+                  'card-footer max-md:min-h-[135px] rounded-b-[20px] bg-black/60 flex flex-col items-center justify-start pt-1 pb-4'
                 )}
               >
-                <h2 className="text-xl md:text-2xl font-semibold text-black">
+                <h2 className="text-xl md:text-2xl font-semibold text-white">
                   {cardContent[index].title}
                 </h2>
                 <ul
                   className={cn(
-                    `text-transparent mt-1 pt-2 md:text-lg px-6 md:px-8 w-full flex flex-col items-start gap-1 list-disc transition border-t border-black/0`,
+                    `text-transparent mt-1 pt-2 md:text-lg px-6 md:px-8 w-full flex flex-col items-center gap-1 list-none transition border-t border-black/0`,
                     (index === expandedIndex || !isDesktop) &&
-                      'text-neutral-800 delay-300 border-black/30'
+                      'text-neutral-200 delay-300 border-white/40'
                   )}
                 >
                   {cardContent[index].links.map((link) => (
-                    <li className="hover:underline" key={link.name}>
+                    <li className="hover:underline w-[300px]" key={link.name}>
                       <Link
                         className="flex justify-center w-full"
                         href={link.href}
