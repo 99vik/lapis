@@ -6,10 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <DisplayedBreadcrumb path={['Studies']} />
-      studies
-    </>
-  );
+  return <>studies</>;
 }

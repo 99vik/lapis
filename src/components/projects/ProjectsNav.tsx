@@ -9,7 +9,7 @@ import {
 import { cn, titleToURI } from '@/lib/utils';
 import Link from 'next/link';
 
-export default function ProjectsNav() {
+export default function ProjectsNav({ path }: { path: string[] }) {
   const [scientificIsOpen, setScientificIsOpen] = useState(true);
   const [studentIsOpen, setStudentIsOpen] = useState(true);
 
@@ -22,7 +22,12 @@ export default function ProjectsNav() {
     <Link
       key={project}
       href={`/projects/scientific-projects/${titleToURI(project)}`}
-      className="px-6 sm:hover:bg-neutral-800 p-2 font-sans rounded-sm"
+      className={cn(
+        'px-6 py-2 font-sans rounded-sm',
+        path.slice(-1)[0] === project
+          ? 'bg-neutral-800'
+          : 'sm:hover:bg-neutral-800'
+      )}
     >
       {project}
     </Link>
@@ -32,17 +37,27 @@ export default function ProjectsNav() {
     <Link
       key={project}
       href="/projects"
-      className="px-6 sm:hover:bg-neutral-800 p-2 font-sans rounded-sm"
+      className={cn(
+        'px-6 py-2 font-sans rounded-sm',
+        path.slice(-1)[0] === project
+          ? 'bg-neutral-800'
+          : 'sm:hover:bg-neutral-800'
+      )}
     >
       {project}
     </Link>
   ));
 
+  console.log(path.slice(-1));
+
   return (
     <nav className="divide-y space-y-2 border-b-2 border-white md:border-none py-4 col-span-2 xl:col-span-1">
       <Link
         href="/projects"
-        className={cn('text-base pl-9 sm:hover:underline')}
+        className={cn(
+          'text-base pl-9',
+          path.slice(-1)[0] === 'Projects' ? 'underline' : 'sm:hover:underline'
+        )}
       >
         About LAPIS projects
       </Link>
@@ -65,7 +80,12 @@ export default function ProjectsNav() {
           </CollapsibleTrigger>
           <Link
             href="/projects/scientific-projects"
-            className="whitespace-nowrap sm:hover:underline"
+            className={cn(
+              'whitespace-nowrap',
+              path.slice(-1)[0] === 'Scientific projects'
+                ? 'underline'
+                : 'sm:hover:underline'
+            )}
           >
             Scientific projects
           </Link>
@@ -98,7 +118,12 @@ export default function ProjectsNav() {
           </CollapsibleTrigger>
           <Link
             href="/projects/student-projects"
-            className="whitespace-nowrap sm:hover:underline"
+            className={cn(
+              'whitespace-nowrap',
+              path.slice(-1)[0] === 'Student projects'
+                ? 'underline'
+                : 'sm:hover:underline'
+            )}
           >
             Student projects
           </Link>
