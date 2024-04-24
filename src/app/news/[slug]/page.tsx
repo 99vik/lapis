@@ -1,3 +1,4 @@
+import ScrollToTop from '@/components/ScrollToTop';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { titleToURI, fetchPostsData } from '@/lib/utils';
 import Post from '@/types/Post';
@@ -40,6 +41,7 @@ export default async function Page({
 
   return (
     <>
+      <ScrollToTop />
       <DisplayedBreadcrumb path={['News', post.title]} />
       <main className="flex flex-col items-center min-h-[calc(100vh-88px-225px)] sm:min-h-[calc(100vh-72px-125px)] mx-2 sm:mx-0 mt-2 mb-8">
         <div className="bg-black flex flex-col py-4 border rounded-xl w-full flex-1 max-w-[900px]">

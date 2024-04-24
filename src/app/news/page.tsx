@@ -40,6 +40,7 @@ export default async function Page() {
               <article key={post.id} className="py-4">
                 <div className="w-fit ">
                   <Link
+                    scroll={true}
                     href={`/news/${titleToURI(post.title)}`}
                     className="hover:underline text-xl flex gap-2 items-center sm:text-xl font-semibold"
                   >

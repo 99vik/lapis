@@ -3,6 +3,7 @@
 import DisplayedBreadcrumb from '@/components/breadcrumb';
 import ProjectsNav from '@/components/projects/ProjectsNav';
 import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function ProjectsLayout({
   children,
@@ -14,6 +15,11 @@ export default function ProjectsLayout({
     .filter(String)
     .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
     .map((str) => str.replaceAll('-', ' '));
+
+  // unpredictable scroll behaviour, next.js bug
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [path]);
 
   return (
     <>

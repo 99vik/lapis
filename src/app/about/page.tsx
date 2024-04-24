@@ -18,6 +18,7 @@ export default function Page() {
         <div className="w-full h-[1px] bg-neutral-600 my-2" />
         <div className="space-y-2 pt-2 pb-6 px-3 sm:px-5 xl:px-12">
           <Image
+            placeholder="blur"
             src={img}
             alt=""
             className="w-[310px] sm:w-[380px] h-auto max-sm:mx-auto sm:float-start mr-5 rounded-xl"
