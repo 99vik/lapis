@@ -13,10 +13,6 @@ export function titleToURI(title: string) {
 
 export async function fetchPostsData(slug: string) {
   const response = await fetch(`${process.env.CMS_URI}`, {
-    next: {
-      tags: ['posts'],
-    },
-    method: 'GET',
     headers: {
       authorization: `${process.env.API_KEY}`,
     },
@@ -29,7 +25,9 @@ export async function fetchPostsData(slug: string) {
     date: dateFormat(new Date(post.createdAt), 'd. mmmm yyyy.'),
     slug: post.id.toString(),
   }));
+  const post = posts.find((post) => {
+    return titleToURI(post.title) === slug;
+  });
 
-  const post = posts.find((post) => titleToURI(post.title) === slug);
   return post;
 }

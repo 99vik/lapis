@@ -7,9 +7,6 @@ import Link from 'next/link';
 
 export default async function Page() {
   const response = await fetch(`${process.env.CMS_URI}`, {
-    next: {
-      tags: ['posts'],
-    },
     method: 'GET',
     headers: {
       authorization: `${process.env.API_KEY}`,
@@ -45,7 +42,11 @@ export default async function Page() {
                     className="hover:underline text-xl flex gap-2 items-center sm:text-xl font-semibold"
                   >
                     {post.title}
-                    <ArrowUpRightFromSquare size={15} strokeWidth={3} />
+                    <ArrowUpRightFromSquare
+                      className="min-w-[15px] aspect-square"
+                      size={15}
+                      strokeWidth={3}
+                    />
                   </Link>
                 </div>
                 <p className="text-lg line-clamp-2 sm:text-base my-4 text-neutral-200">
