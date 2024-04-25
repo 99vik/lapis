@@ -14,7 +14,6 @@ export function titleToURI(title: string) {
 export async function fetchPostsData(slug: string) {
   const response = await fetch(`${process.env.CMS_URI}`, {
     next: {
-      revalidate: 300,
       tags: ['posts'],
     },
     method: 'GET',
