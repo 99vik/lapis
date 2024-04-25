@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 export async function generateStaticParams() {
   const response = await fetch(`${process.env.CMS_URI}`, {
     next: {
+      revalidate: 300,
       tags: ['posts'],
     },
     method: 'GET',

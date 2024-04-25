@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default async function News() {
   const response = await fetch(`${process.env.CMS_URI}`, {
     next: {
+      revalidate: 300,
       tags: ['posts'],
     },
     method: 'GET',
