@@ -2,7 +2,7 @@ export const projectsInfiniteCardsContent = [
   {
     body: 'AMICORC will analyze recent research findings in human cognition, cognitive robotics and human robot interaction, and use them as the basis for developing new robot reasoning and interaction strategies. Computational architecture developed in AMICORC could be seen as context-to-data interpreter that endow machines to “reason” based on constantly changing perspectives.',
     title: 'AMICORC Project',
-    url: '/projects/amicorn',
+    url: '/projects/amicorc',
   },
   {
     body: 'Cartesian coordinate robot is a part of the student work where all components are joint together manually and programmed. We use information visualization techniques to additionally control and program the robot. This work is supported by ProEL and RoboDK.',
@@ -30,7 +30,7 @@ export const projectsTabsContent = [
   {
     title: 'AMICORC Project',
     text: 'AMICORC will analyze recent research findings in human cognition, cognitive robotics and human robot interaction, and use them as the basis for developing new robot reasoning and interaction strategies. Computational architecture developed in AMICORC could be seen as context-to-data interpreter that endow machines to “reason” based on constantly changing perspectives.',
-    url: '/projects/amicorn',
+    url: '/projects/amicorc',
   },
   {
     title: 'Cartesian coordinate robot project',

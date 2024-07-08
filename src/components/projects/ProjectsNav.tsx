@@ -14,7 +14,7 @@ export default function ProjectsNav({ path }: { path: string[] }) {
   const [studentIsOpen, setStudentIsOpen] = useState(true);
 
   const projects = {
-    scientific: ['Amicorn project', 'Smart lab', 'Mixed reality'],
+    scientific: ['Amicorc project', 'Smart lab', 'Mixed reality'],
     student: ['Project1', 'Project2', 'Project3', 'Project4'],
   };
 

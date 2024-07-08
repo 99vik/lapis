@@ -1,10 +1,10 @@
 import ProjectImageCarousel from '@/components/projects/ProjectsImageCarousel';
 import { EvervaultCard } from '@/components/ui/evervault-card';
 import Link from 'next/link';
-import img1 from '@/../public/projects/amicorn/1.jpg';
-import img2 from '@/../public/projects/amicorn/2.jpg';
-import img3 from '@/../public/projects/amicorn/3.jpg';
-import img4 from '@/../public/projects/amicorn/4.jpg';
+import img1 from '@/../public/projects/amicorc/1.jpg';
+import img2 from '@/../public/projects/amicorc/2.jpg';
+import img3 from '@/../public/projects/amicorc/3.jpg';
+import img4 from '@/../public/projects/amicorc/4.jpg';
 import img0 from '@/../public/projectExp.jpg';
 
 export default function Page() {

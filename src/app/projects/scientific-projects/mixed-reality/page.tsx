@@ -1,7 +1,7 @@
 import ProjectImageCarousel from '@/components/projects/ProjectsImageCarousel';
 import img0 from '@/../public/projectExp.jpg';
-import img1 from '@/../public/projects/amicorn/1.jpg';
-import img2 from '@/../public/projects/amicorn/2.jpg';
+import img1 from '@/../public/projects/amicorc/1.jpg';
+import img2 from '@/../public/projects/amicorc/2.jpg';
 
 export default function Page() {
   const images = [img1.src, img2.src, img0.src];

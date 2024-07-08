@@ -1,7 +1,7 @@
 import ProjectImageCarousel from '@/components/projects/ProjectsImageCarousel';
 import img0 from '@/../public/projectExp.jpg';
-import img1 from '@/../public/projects/amicorn/1.jpg';
-import img2 from '@/../public/projects/amicorn/2.jpg';
+import img1 from '@/../public/projects/amicorc/1.jpg';
+import img2 from '@/../public/projects/amicorc/2.jpg';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { Sparkles } from '../Sparkles';
 
 export default function Hero() {
   return (
@@ -19,8 +18,6 @@ export default function Hero() {
           <h1 className="text-2xl text-center sm:text-4xl mb-2 font-bold z-20 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
             Laboratory for Manufacturing and Assembly Systems Planning
           </h1>
-          <div className="h-[0.5px] w-full bg-gradient-to-r from-white/10 via-white to-white/10" />
-          <Sparkles />
         </div>
       </div>
     </section>
