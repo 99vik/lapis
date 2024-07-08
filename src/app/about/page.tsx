@@ -3,6 +3,7 @@ import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import img from '@/../public/img4.jpg';
+import MainContentHolder from '@/components/MainContentHolder';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -12,9 +13,7 @@ export default function Page() {
   return (
     <>
       <DisplayedBreadcrumb path={['About']} />
-      <main className="bg-black border rounded-xl mt-2 mx-2 md:mx-6 lg:mx-auto lg:w-[850px] pt-6 pb-8 mb-6">
-        <h1 className="text-3xl text-center font-bold">About us</h1>
-        <div className="w-full h-[1px] bg-neutral-600 my-2" />
+      <MainContentHolder title="About us">
         <div className="space-y-2 pt-2 pb-6 px-3 sm:px-5 xl:px-12">
           <Image
             placeholder="blur"
@@ -51,8 +50,7 @@ export default function Page() {
             auctor sodales varius.
           </p>
         </div>
-        <AboutUsAccordion />
-      </main>
+      </MainContentHolder>
     </>
   );
 }
