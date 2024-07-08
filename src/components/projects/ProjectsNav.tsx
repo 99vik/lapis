@@ -15,7 +15,7 @@ export default function ProjectsNav({ path }: { path: string[] }) {
 
   const projects = {
     scientific: ['Amicorc project', 'Smart lab', 'Mixed reality'],
-    student: ['Project1', 'Project2', 'Project3', 'Project4'],
+    student: ['Project1', 'Project2', 'Project3'],
   };
 
   const scientificProjects = projects.scientific.map((project) => (
@@ -36,7 +36,7 @@ export default function ProjectsNav({ path }: { path: string[] }) {
   const studentProjects = projects.student.map((project) => (
     <Link
       key={project}
-      href="/projects"
+      href={`/projects/student-projects/${titleToURI(project)}`}
       className={cn(
         'px-6 py-2 font-sans rounded-sm',
         path.slice(-1)[0] === project
