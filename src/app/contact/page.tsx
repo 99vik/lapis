@@ -1,8 +1,9 @@
-import { LocationPin } from '@/components/LocationPin';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
 import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import MainContentHolder from '@/components/MainContentHolder';
+import GoogleMapEmbed from '@/components/GoogleMapEmbed';
+import { MapProvider } from '@/components/MapProvider';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -25,7 +26,9 @@ export default function Page() {
             <p className="">10 000 Zagreb, Croatia</p>
           </div>
         </div>
-        <LocationPin />
+        <MapProvider>
+          <GoogleMapEmbed />
+        </MapProvider>
         <ContactForm />
       </MainContentHolder>
     </>
