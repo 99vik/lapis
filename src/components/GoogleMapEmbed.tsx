@@ -9,11 +9,11 @@ const defaultMapContainerStyle = {
 };
 
 const defaultPosition = {
-  lat: 45.795,
-  lng: 15.972,
+  lat: 45.79538,
+  lng: 15.97177,
 };
 
-const defaultZoom = 16;
+const defaultZoom = 17;
 
 export default function GoogleMapEmbed() {
   return (
