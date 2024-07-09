@@ -4,6 +4,7 @@ import ContactForm from '@/components/ContactForm';
 import MainContentHolder from '@/components/MainContentHolder';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { MapProvider } from '@/components/MapProvider';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -14,22 +15,27 @@ export default function Page() {
     <>
       <DisplayedBreadcrumb path={['Contact']} />
       <MainContentHolder title="Contact">
-        <div className="py-5 px-3 sm:px-5 xl:px-12 grid grid-cols-2">
-          <div className="flex flex-col items-center">
-            <p className="font-bold text-lg mb-1">E-mail</p>
-            <p className="">Email1@example.com</p>
-            <p className="">Email2@example.com</p>
+        <div className="space-y-8 py-8">
+          <div className="flex flex-col items-center gap-2 text-lg font-semibold">
+            <div className="flex gap-1 items-center">
+              <Mail size={20} />
+              <p>Email: Email1@example.com </p>
+            </div>
+            <div className="flex gap-1 items-center">
+              <MapPin size={20} />
+              <p>Adress: Ivana Lučića 5, 10 000 Zagreb</p>
+            </div>
+            <div className="flex gap-1 items-center">
+              <Phone size={20} />
+              <p>Phone: +385 123 321 32</p>
+            </div>
           </div>
-          <div className="flex flex-col items-center">
-            <p className="font-bold text-lg mb-1">Address</p>
-            <p className="">Ivana Lučića 5,</p>
-            <p className="">10 000 Zagreb, Croatia</p>
-          </div>
+          <MapProvider>
+            <GoogleMapEmbed />
+          </MapProvider>
+          <div className="h-[1px] w-full bg-zinc-700" />
+          <ContactForm />
         </div>
-        <MapProvider>
-          <GoogleMapEmbed />
-        </MapProvider>
-        <ContactForm />
       </MainContentHolder>
     </>
   );

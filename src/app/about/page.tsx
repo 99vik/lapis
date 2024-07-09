@@ -50,6 +50,7 @@ export default function Page() {
             auctor sodales varius.
           </p>
         </div>
+        <AboutUsAccordion />
       </MainContentHolder>
     </>
   );
