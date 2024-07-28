@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <DisplayedBreadcrumb path={['About']} />
-      <MainContentHolder title="About us">
+      <MainContentHolder title="About us" subtitle="Find out more about LAPIS">
         <div className="space-y-2 pt-2 pb-6 px-3 sm:px-5 xl:px-12">
           <Image
             placeholder="blur"
