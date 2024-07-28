@@ -2,7 +2,6 @@
 
 import StudiesNav from '@/components/StudiesNav';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
-import ProjectsNav from '@/components/projects/ProjectsNav';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 

@@ -12,7 +12,12 @@ import { cn, titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
 import dateFormat from 'dateformat';
 import { ArrowUpRightFromSquare } from 'lucide-react';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'News',
+};
 
 export default async function Page({
   searchParams,

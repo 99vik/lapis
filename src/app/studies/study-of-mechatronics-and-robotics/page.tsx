@@ -1,3 +1,9 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Study of Mechatronics and Robotics',
+};
+
 export default function Page() {
   return (
     <>
