@@ -20,7 +20,7 @@ export default async function Page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const page = Number(searchParams.page) || 1;
-  const pageSize = 2;
+  const pageSize = 4;
 
   const response = await fetch(
     `${process.env.CMS_URI}?page=${page}&limit=${pageSize}`,
