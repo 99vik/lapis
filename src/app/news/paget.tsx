@@ -83,7 +83,7 @@ export default async function Page({
                   href={`/news?page=${page > 1 ? page - 1 : 1}`}
                 />
               </PaginationItem>
-              {Array.from({ length: totalPages }, (_, i) => (
+              {Array.from({ length: 3 }, (_, i) => (
                 <PaginationItem key={i}>
                   <PaginationLink
                     href={`/news?page=${i + 1}`}

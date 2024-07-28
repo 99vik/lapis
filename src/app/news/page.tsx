@@ -1,10 +1,5 @@
 import MainContentHolder from '@/components/MainContentHolder';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
-import { titleToURI } from '@/lib/utils';
-import Post from '@/types/Post';
-import dateFormat from 'dateformat';
-import { ArrowUpRightFromSquare } from 'lucide-react';
-import Link from 'next/link';
 import {
   Pagination,
   PaginationContent,
@@ -13,6 +8,11 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from '@/components/ui/pagination';
+import { cn, titleToURI } from '@/lib/utils';
+import Post from '@/types/Post';
+import dateFormat from 'dateformat';
+import { ArrowUpRightFromSquare } from 'lucide-react';
+import Link from 'next/link';
 
 export default async function Page({
   searchParams,
@@ -20,7 +20,7 @@ export default async function Page({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const page = Number(searchParams.page) || 1;
-  const pageSize = 2;
+  const pageSize = 6;
 
   const response = await fetch(
     `${process.env.CMS_URI}?page=${page}&limit=${pageSize}`,
@@ -78,23 +78,46 @@ export default async function Page({
         <div className="flex justify-center mt-8">
           <Pagination>
             <PaginationContent>
-              <PaginationItem>
+              <PaginationItem className="border-r pr-1">
                 <PaginationPrevious
+                  className={cn(
+                    page === 1 &&
+                      'cursor-not-allowed opacity-50 hover:bg-accent/0'
+                  )}
                   href={`/news?page=${page > 1 ? page - 1 : 1}`}
                 />
               </PaginationItem>
-              {Array.from({ length: totalPages }, (_, i) => (
-                <PaginationItem key={i}>
-                  <PaginationLink
-                    href={`/news?page=${i + 1}`}
-                    isActive={page === i + 1}
-                  >
-                    {i + 1}
-                  </PaginationLink>
-                </PaginationItem>
-              ))}
-              <PaginationItem>
+              {totalPages > 3
+                ? Array.from([page - 1, page, page + 1], (i) => {
+                    if (page === 1) i += 1;
+                    if (page === totalPages) i -= 1;
+                    return (
+                      <PaginationItem key={i}>
+                        <PaginationLink
+                          href={`/news?page=${i}`}
+                          isActive={page === i}
+                        >
+                          {i}
+                        </PaginationLink>
+                      </PaginationItem>
+                    );
+                  })
+                : Array.from({ length: totalPages }, (_, i) => (
+                    <PaginationItem key={i}>
+                      <PaginationLink
+                        href={`/news?page=${i + 1}`}
+                        isActive={page === i + 1}
+                      >
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ))}
+              <PaginationItem className="border-l pl-1">
                 <PaginationNext
+                  className={cn(
+                    page === totalPages &&
+                      'cursor-not-allowed opacity-50 hover:bg-accent/0'
+                  )}
                   href={`/news?page=${
                     page < totalPages ? page + 1 : totalPages
                   }`}
