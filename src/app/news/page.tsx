@@ -80,10 +80,7 @@ export default async function Page({
             <PaginationContent>
               <PaginationItem className="border-r pr-1">
                 <PaginationPrevious
-                  className={cn(
-                    page === 1 &&
-                      'cursor-not-allowed opacity-50 hover:bg-accent/0'
-                  )}
+                  className={cn(page === 1 && 'pointer-events-none opacity-50')}
                   href={`/news?page=${page > 1 ? page - 1 : 1}`}
                 />
               </PaginationItem>
@@ -115,8 +112,7 @@ export default async function Page({
               <PaginationItem className="border-l pl-1">
                 <PaginationNext
                   className={cn(
-                    page === totalPages &&
-                      'cursor-not-allowed opacity-50 hover:bg-accent/0'
+                    page === totalPages && 'pointer-events-none opacity-50'
                   )}
                   href={`/news?page=${
                     page < totalPages ? page + 1 : totalPages

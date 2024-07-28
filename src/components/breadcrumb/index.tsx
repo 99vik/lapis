@@ -26,7 +26,7 @@ export default function DisplayedBreadcrumb({ path }: { path: string[] }) {
             <Slash />
           </BreadcrumbSeparator>
           <BreadcrumbItem>
-            <BreadcrumbPage className="text-white underline max-w-[160px] sm:max-w-[220px] truncate">
+            <BreadcrumbPage className="text-white underline max-w-[180px] sm:max-w-[240px] md:max-w-[450px] truncate">
               {link}
             </BreadcrumbPage>
           </BreadcrumbItem>
