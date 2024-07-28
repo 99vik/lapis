@@ -90,8 +90,8 @@ export default function NavigationCards() {
   };
 
   return (
-    <section className="sm:py-10">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-2">
+    <section className="sm:py-10 w-full overflow-hidden">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-2">
         {[0, 1, 2].map((index) => (
           <motion.div
             key={index}
