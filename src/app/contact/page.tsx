@@ -15,7 +15,7 @@ export default function Page() {
     <>
       <DisplayedBreadcrumb path={['Contact']} />
       <MainContentHolder title="Contact">
-        <div className="space-y-8 py-8">
+        <div className="space-y-8 py-4">
           <div className="flex flex-col items-center gap-2 text-lg">
             <div className="flex gap-1 items-center">
               <Mail size={20} />

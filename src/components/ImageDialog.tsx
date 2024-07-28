@@ -17,7 +17,7 @@ export function ImageDialog({
     <Dialog open={open} onOpenChange={() => setModalOpen(false)}>
       <DialogContent className="rounded-lg w-[95vw] h-[60vh] sm:w-[85vw] sm:h-[80vh]">
         <Image
-          placeholder="blur"
+          placeholder="empty"
           fill={true}
           className="object-scale-down my-auto max-h-[95%]"
           alt=""

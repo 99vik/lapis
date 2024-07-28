@@ -32,7 +32,7 @@ export default function DisplayedImagesWithDialog({
                   setImage(image);
                 }}
                 src={image}
-                quality={30}
+                quality={25}
                 alt="gallery image"
                 className="object-cover object-center h-full w-full rounded-xl cursor-pointer"
                 placeholder="blur"
