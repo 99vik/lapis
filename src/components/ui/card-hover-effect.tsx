@@ -18,7 +18,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        'w-fit grid mt-2 grid-cols-1 md:grid-cols-2  lg:grid-cols-3 ',
+        'grid px-3 py-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ',
         className
       )}
     >
@@ -67,7 +67,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'rounded-xl px-3 py-2 h-[120px] w-[300px] bg-neutral-900 border border-neutral-600 relative z-20',
+        'rounded-xl px-3 py-2 h-[120px] bg-neutral-900 border border-neutral-600 relative z-20',
         className
       )}
     >

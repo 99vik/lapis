@@ -1,7 +1,6 @@
 import Post from '@/types/Post';
-import { HoverEffect } from '../ui/card-hover-effect';
 import dateFormat from 'dateformat';
-import Link from 'next/link';
+import { HoverEffect } from '../ui/card-hover-effect';
 
 export default async function News() {
   const response = await fetch(`${process.env.CMS_URI}`, {
@@ -32,12 +31,14 @@ export default async function News() {
   }
 
   return (
-    <section className="sm:px-14 mx-2 xl:mx-auto xl:w-[1200px] flex flex-col items-center py-12 bg-black mt-10 mb-16 border rounded-xl">
-      <Link href="/news" className="hover:underline">
-        <h2 className="text-2xl ">Latest news</h2>
-      </Link>
-      <div className="h-[1px] my-2 bg-white/30 w-full" />
-      <HoverEffect items={posts} />
-    </section>
+    <main className="flex flex-col items-center justify-center mx-2 sm:mx-0 mt-2 mb-8">
+      <div className="bg-black flex-1 flex flex-col py-4 border rounded-xl w-full max-w-[900px]">
+        <div className="px-4 sm:px-8 text-center">
+          <h1 className="text-xl md:text-3xl font-bold">Latest news</h1>
+        </div>
+        <div className="w-full h-[1px] bg-neutral-600 my-2" />
+        <HoverEffect items={posts} />
+      </div>
+    </main>
   );
 }
