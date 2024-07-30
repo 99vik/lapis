@@ -26,7 +26,7 @@ export const HoverEffect = ({
         <Link
           href={`/news/${titleToURI(item.title)}`}
           key={item.id}
-          className="relative group block p-[5px] h-full w-full"
+          className="relative group block p-[5px] h-[130px] w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
