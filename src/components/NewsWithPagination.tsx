@@ -66,7 +66,7 @@ export default function NewsWithPagination({
                   size={12}
                   strokeWidth={3}
                 />
-                {post.title}
+                <p className="line-clamp-2">{post.title}</p>
               </Link>
             </div>
             <p className="text-lg line-clamp-2 sm:text-base my-2 sm:my-4 text-neutral-200">
