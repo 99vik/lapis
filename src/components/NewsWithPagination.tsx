@@ -58,9 +58,8 @@ export default function NewsWithPagination({
           <article key={post.id} className="py-4">
             <div className="w-fit ">
               <Link
-                scroll={true}
                 href={`/news/${titleToURI(post.title)}`}
-                className="hover:underline text-xl flex gap-2 items-start sm:text-xl font-semibold"
+                className="hover:underline flex gap-2 items-start sm:text-lg font-semibold"
               >
                 <ArrowUpRightFromSquare
                   className="min-w-[15px] mt-2 aspect-square"
