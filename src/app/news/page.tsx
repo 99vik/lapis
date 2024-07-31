@@ -14,6 +14,7 @@ import dateFormat from 'dateformat';
 import { ArrowUpRightFromSquare } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import postgres from 'postgres';
 
 export const metadata: Metadata = {
   title: 'News',

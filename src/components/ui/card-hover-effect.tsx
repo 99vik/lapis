@@ -2,6 +2,7 @@
 
 import { cn, titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
+import dateFormat from 'dateformat';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -49,7 +50,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardTitle>{item.title}</CardTitle>
-            <CardDate>{item.date}</CardDate>
+            <CardDate>{dateFormat(item.created_at, 'd. mmmm yyyy.')}</CardDate>
           </Card>
         </Link>
       ))}
