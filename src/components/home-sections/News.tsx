@@ -1,36 +1,8 @@
 import Post from '@/types/Post';
-import dateFormat from 'dateformat';
-import { HoverEffect } from '../ui/card-hover-effect';
 import postgres from 'postgres';
+import { HoverEffect } from '../ui/card-hover-effect';
 
 export default async function News() {
-  // const response = await fetch(`${process.env.CMS_URI}`, {
-  //   method: 'GET',
-  //   headers: {
-  //     authorization: `${process.env.API_KEY}`,
-  //   },
-  // });
-
-  // const data = await response.json();
-  // let posts: Post[];
-  // if (data.docs) {
-  //   posts = data.docs.slice(0, 6);
-  //   posts = posts.map((post) => ({
-  //     ...post,
-  //     date: dateFormat(new Date(post.createdAt), 'd. mmmm yyyy.'),
-  //   }));
-  // } else {
-  //   posts = [
-  //     {
-  //       id: 0,
-  //       title: 'slug',
-  //       content: 'slug',
-  //       createdAt: String(new Date()),
-  //       date: String(new Date()),
-  //     },
-  //   ];
-  // }
-
   const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' });
   const posts = (await sql`
     SELECT * FROM posts 

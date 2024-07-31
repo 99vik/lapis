@@ -18,24 +18,6 @@ export async function generateStaticParams() {
     slug: titleToURI(post.title),
     content: post.content,
   }));
-
-  // const response = await fetch(`${process.env.CMS_URI}`, {
-  //   method: 'GET',
-  //   headers: {
-  //     authorization: `${process.env.API_KEY}`,
-  //   },
-  // });
-
-  // const data = await response.json();
-  // if (data.docs) {
-  //   let posts: Post[] = data.docs;
-
-  //   return posts.map((post) => ({
-  //     slug: titleToURI(post.title),
-  //   }));
-  // } else {
-  //   return ['slug'];
-  // }
 }
 
 export default async function Page({
@@ -55,8 +37,6 @@ export default async function Page({
   const post = posts.find((post) => {
     return titleToURI(post.title) === slug;
   });
-
-  // const post = await fetchPostsData(slug);
 
   if (!post) return notFound();
   return (

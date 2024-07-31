@@ -1,20 +1,7 @@
-import MainContentHolder from '@/components/MainContentHolder';
 import NewsWithPagination from '@/components/NewsWithPagination';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
-import { cn, titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
-import dateFormat from 'dateformat';
-import { ArrowUpRightFromSquare } from 'lucide-react';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import postgres from 'postgres';
 
 export const metadata: Metadata = {
