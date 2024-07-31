@@ -1,28 +1,41 @@
 import MainContentHolder from '@/components/MainContentHolder';
 import ScrollToTop from '@/components/ScrollToTop';
 import DisplayedBreadcrumb from '@/components/breadcrumb';
-import { titleToURI, fetchPostsData } from '@/lib/utils';
+import { titleToURI } from '@/lib/utils';
 import Post from '@/types/Post';
 import { notFound } from 'next/navigation';
+import postgres from 'postgres';
+import dateFormat from 'dateformat';
 
 export async function generateStaticParams() {
-  const response = await fetch(`${process.env.CMS_URI}`, {
-    method: 'GET',
-    headers: {
-      authorization: `${process.env.API_KEY}`,
-    },
-  });
+  const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' });
+  const posts = (await sql`
+    SELECT * FROM posts 
+    ORDER BY created_at DESC 
+  `) as Post[];
 
-  const data = await response.json();
-  if (data.docs) {
-    let posts: Post[] = data.docs;
+  return posts.map((post) => ({
+    slug: titleToURI(post.title),
+    content: post.content,
+  }));
 
-    return posts.map((post) => ({
-      slug: titleToURI(post.title),
-    }));
-  } else {
-    return ['slug'];
-  }
+  // const response = await fetch(`${process.env.CMS_URI}`, {
+  //   method: 'GET',
+  //   headers: {
+  //     authorization: `${process.env.API_KEY}`,
+  //   },
+  // });
+
+  // const data = await response.json();
+  // if (data.docs) {
+  //   let posts: Post[] = data.docs;
+
+  //   return posts.map((post) => ({
+  //     slug: titleToURI(post.title),
+  //   }));
+  // } else {
+  //   return ['slug'];
+  // }
 }
 
 export default async function Page({
@@ -33,10 +46,19 @@ export default async function Page({
   };
 }) {
   const { slug } = params;
-  const post = await fetchPostsData(slug);
+  const sql = postgres(process.env.DATABASE_URL!, { ssl: 'require' });
+  const posts = (await sql`
+      SELECT * FROM posts
+      ORDER BY created_at DESC
+    `) as Post[];
+
+  const post = posts.find((post) => {
+    return titleToURI(post.title) === slug;
+  });
+
+  // const post = await fetchPostsData(slug);
 
   if (!post) return notFound();
-
   return (
     <>
       <ScrollToTop />
@@ -45,7 +67,7 @@ export default async function Page({
         <div className="px-4 sm:px-6 flex flex-col flex-1">
           <p className="flex-1">{post.content}</p>
           <p className="text-neutral-400 text-sm w-full text-right">
-            {post.date}
+            {dateFormat(post.created_at, 'd. mmmm yyyy.')}
           </p>
         </div>
       </MainContentHolder>
