@@ -55,11 +55,11 @@ export default function NewsWithPagination({
     >
       <div className="divide-y px-4 sm:px-8">
         {currentPosts.map((post) => (
-          <article key={post.id} className="py-4">
+          <article key={post.id} className="py-2 sm:py-3">
             <div className="w-fit ">
               <Link
                 href={`/news/${titleToURI(post.title)}`}
-                className="hover:underline flex gap-2 items-start sm:text-lg font-semibold"
+                className="hover:underline flex gap-1 sm:gap-2 items-start sm:text-lg font-semibold"
               >
                 <ArrowUpRightFromSquare
                   className="min-w-[15px] mt-2 aspect-square"
@@ -69,7 +69,7 @@ export default function NewsWithPagination({
                 {post.title}
               </Link>
             </div>
-            <p className="text-lg line-clamp-2 sm:text-base my-4 text-neutral-200">
+            <p className="text-lg line-clamp-2 sm:text-base my-2 sm:my-4 text-neutral-200">
               {post.content}
             </p>
             <p className="text-neutral-400 text-sm w-full text-right">

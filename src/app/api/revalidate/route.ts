@@ -1,4 +1,4 @@
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 
 export async function GET(request: Request) {
   if (request.headers.get('authorization') !== process.env.API_KEY)
